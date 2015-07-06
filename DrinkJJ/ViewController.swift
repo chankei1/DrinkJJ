@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //画面サイズ
+    let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
+    let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
         
     }
 
