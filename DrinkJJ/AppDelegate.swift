@@ -12,15 +12,48 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        topView()
+        
+        //genreSelectView()
         
         
         
         return true
     }
+    
+    
+    func topView(){
+        // ViewControllerを生成する.
+        let myTopViewController: TopViewController = TopViewController()
+        
+        // UIWindowを生成する.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        // rootViewControllerにNatigationControllerを設定する.
+        self.window?.rootViewController = myTopViewController
+        
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func genreSelectView(){
+        // ViewControllerを生成する.
+        let myGenreSelectViewController: GenreSelectViewController = GenreSelectViewController()
+        
+        // UIWindowを生成する.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        // rootViewControllerにNatigationControllerを設定する.
+        self.window?.rootViewController = myGenreSelectViewController
+        
+        self.window?.makeKeyAndVisible()
+    }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
