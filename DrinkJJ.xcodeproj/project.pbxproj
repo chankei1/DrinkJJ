@@ -13,6 +13,15 @@
 		185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C079A1B4AA79100CA7009 /* Images.xcassets */; };
 		185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185C079C1B4AA79100CA7009 /* LaunchScreen.xib */; };
 		185C07AA1B4AA79100CA7009 /* DrinkJJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07A91B4AA79100CA7009 /* DrinkJJTests.swift */; };
+		18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */; };
+		18EA32CD1B4ACAE500CE8D73 /* DrinkDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */; };
+		18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */; };
+		18EA32D61B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */; };
+		18EA32D71B4ACAFA00CE8D73 /* DrinkOnePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */; };
+		18EA32D81B4ACAFA00CE8D73 /* DrinkSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */; };
+		18EA32D91B4ACAFA00CE8D73 /* GenreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D21B4ACAFA00CE8D73 /* GenreSelectViewController.swift */; };
+		18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */; };
+		18EA32DB1B4ACAFA00CE8D73 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D41B4ACAFA00CE8D73 /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,15 @@
 		185C07A31B4AA79100CA7009 /* DrinkJJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkJJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C07A81B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185C07A91B4AA79100CA7009 /* DrinkJJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkJJTests.swift; sourceTree = "<group>"; };
+		18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuJSON.txt; sourceTree = "<group>"; };
+		18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkDataViewController.swift; path = ViewController/DrinkDataViewController.swift; sourceTree = "<group>"; };
+		18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkClassificationViewController.swift; path = ViewController/DrinkClassificationViewController.swift; sourceTree = "<group>"; };
+		18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkDescriptionViewController.swift; path = ViewController/DrinkDescriptionViewController.swift; sourceTree = "<group>"; };
+		18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkOnePoint.swift; path = ViewController/DrinkOnePoint.swift; sourceTree = "<group>"; };
+		18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkSelectViewController.swift; path = ViewController/DrinkSelectViewController.swift; sourceTree = "<group>"; };
+		18EA32D21B4ACAFA00CE8D73 /* GenreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenreSelectViewController.swift; path = ViewController/GenreSelectViewController.swift; sourceTree = "<group>"; };
+		18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HowToMakeDrink.swift; path = ViewController/HowToMakeDrink.swift; sourceTree = "<group>"; };
+		18EA32D41B4ACAFA00CE8D73 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = ViewController/TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,8 @@
 			children = (
 				185C07931B4AA79100CA7009 /* AppDelegate.swift */,
 				185C07951B4AA79100CA7009 /* ViewController.swift */,
+				18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */,
+				18EA32B81B4AC88700CE8D73 /* ViewController */,
 				185C07971B4AA79100CA7009 /* Main.storyboard */,
 				185C079A1B4AA79100CA7009 /* Images.xcassets */,
 				185C079C1B4AA79100CA7009 /* LaunchScreen.xib */,
@@ -110,6 +130,21 @@
 				185C07A81B4AA79100CA7009 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18EA32B81B4AC88700CE8D73 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */,
+				18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */,
+				18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */,
+				18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */,
+				18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */,
+				18EA32D21B4ACAFA00CE8D73 /* GenreSelectViewController.swift */,
+				18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */,
+				18EA32D41B4ACAFA00CE8D73 /* TopViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185C07991B4AA79100CA7009 /* Main.storyboard in Resources */,
+				18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */,
 				185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */,
 				185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */,
 			);
@@ -213,7 +249,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				185C07961B4AA79100CA7009 /* ViewController.swift in Sources */,
+				18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */,
+				18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrink.swift in Sources */,
+				18EA32DB1B4ACAFA00CE8D73 /* TopViewController.swift in Sources */,
+				18EA32D61B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift in Sources */,
+				18EA32D71B4ACAFA00CE8D73 /* DrinkOnePoint.swift in Sources */,
+				18EA32D91B4ACAFA00CE8D73 /* GenreSelectViewController.swift in Sources */,
+				18EA32CD1B4ACAE500CE8D73 /* DrinkDataViewController.swift in Sources */,
 				185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */,
+				18EA32D81B4ACAFA00CE8D73 /* DrinkSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +453,7 @@
 				185C07AF1B4AA79100CA7009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		185C07B01B4AA79100CA7009 /* Build configuration list for PBXNativeTarget "DrinkJJTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +462,7 @@
 				185C07B21B4AA79100CA7009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

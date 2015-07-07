@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //画面サイズ
-    let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
-    let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("ああああ")
+        start()
         
+    }
+    
+    func start(){
+        // 遷移するViewを定義する.
+        let topViewController: UIViewController = TopViewController()
         
+        // アニメーションを設定する.
+        topViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
         
+        // Viewの移動をする.
+        self.presentViewController(topViewController, animated: true, completion: nil)
         
     }
 
@@ -26,7 +35,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

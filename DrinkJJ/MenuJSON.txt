@@ -1,0 +1,26 @@
+[
+{
+"category_id": 1,
+"name": "中ビール"
+},
+{
+"category_id": 1,
+"name": "小ビール"
+},
+{
+"category_id": 1,
+"name": "(瓶ビール)キリン"
+},
+{
+"category_id": 1,
+"name": "(瓶ビール)アサヒスーパードライ"
+},
+{
+"category_id": 1,
+"name": "(瓶ビール)サッポロ"
+},
+{
+"category_id": 1,
+"name": "ノンアルコールビール"
+},
+]
