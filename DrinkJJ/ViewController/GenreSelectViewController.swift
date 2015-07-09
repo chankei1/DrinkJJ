@@ -7,7 +7,8 @@
 //
 
 import UIKit
-class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
+
+class GenreSelectViewController: UIViewController{
     
     //全てのジャンルを設置
     let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "ウイスキー", "酒", "焼酎", "ワイン"]
@@ -85,21 +86,34 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
         println("タップしたジャンル名：\(touchGenreName)")
         println("タップしたジャンルのタグ：\(touchGenreTag)")
         
-        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
-        
-        switch touchGenreTag {
-        case 1:
-            // Viewを移動する.
-            //self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
+        let drinkSelectViewController = DrinkSelectViewController()
+        //タップ判定
+        if(touchGenreTag != 0){
+            drinkSelectViewController.genreTagNum = touchGenreTag
             self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
-        case 2:
-            println("2")
-        case 3:
-            println("3")
-        
-        default:
-            break
         }
+        
+
+//        switch touchGenreTag {
+//        case 1:
+//            println("1")
+//            
+//            // Viewを移動する.
+//            //self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
+//            drinkSelectViewController.genreTagNum = touchGenreTag
+//            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
+//            
+//        case 2:
+//            println("2")
+//            drinkSelectViewController.genreTagNum = touchGenreTag
+//            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
+//            
+//        case 3:
+//            println("3")
+//            
+//        default:
+//            break
+//        }
         
 
     }

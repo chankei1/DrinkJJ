@@ -23,4 +23,60 @@
 "category_id": 1,
 "name": "ノンアルコールビール"
 },
+{
+"category_id": 2,
+"name": "ウーロン茶"
+},
+{
+"category_id": 2,
+"name": "玉露入りお茶"
+},
+{
+"category_id": 2,
+"name": "グレープフルーツジュース"
+},
+{
+"category_id": 2,
+"name": "オレンジジュース"
+},
+{
+"category_id": 2,
+"name": "アップルジュース"
+},
+{
+"category_id": 2,
+"name": "クランベリージュース"
+},
+{
+"category_id": 2,
+"name": "コーラ"
+},
+{
+"category_id": 2,
+"name": "サイダー"
+},
+{
+"category_id": 2,
+"name": "ジンジャーエール"
+},
+{
+"category_id": 2,
+"name": "ペリエ"
+},
+{
+"category_id": 2,
+"name": "アルカリイオン水"
+},
+{
+"category_id": 2,
+"name": "ICEコーヒー"
+},
+{
+"category_id": 2,
+"name": "HOTコーヒー"
+},
+{
+"category_id": 2,
+"name": "HOTソフトドリンク"
+}
 ]

@@ -7,7 +7,9 @@
 //
 
 import UIKit
-class DrinkSelectViewController: UIViewController{
+class DrinkSelectViewController: UIViewController {
+    
+    var genreTagNum:Int = 0
     
     //スクリーンの幅
     let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
@@ -38,25 +40,56 @@ class DrinkSelectViewController: UIViewController{
         //println(jsonArray)
         
         println(jsonArray.count)
-        
-        for(var i = 0; i<jsonArray.count; i++){
-            calLabel.insert(UILabel(), atIndex: i)
-            calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
-            calLabel[i].text = jsonArray[i]["name"] as? String
-            calLabel[i].backgroundColor = UIColor.whiteColor()
-            calLabel[i].textAlignment = NSTextAlignment.Center
-            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
-            calLabel[i].userInteractionEnabled = true;
-            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
-            calLabel[i].tag = i+1
-            calLabel[i].numberOfLines = 0;
-            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
-            calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
-            //calLabel[i].sizeToFit();
-            calLabel[i].layer.masksToBounds = true
-            calLabel[i].layer.cornerRadius = 40.0
-            self.view.addSubview(calLabel[i])
+        println(genreTagNum)
+        //println(jsonArray["category_id"])
+        var i = 0
+        var name:String = ""
+        for data in jsonArray{
+            if(genreTagNum == data["category_id"] as! Int){
+                name = data["name"] as! String
+                calLabel.insert(UILabel(), atIndex: i)
+                calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
+                calLabel[i].text = name
+                calLabel[i].backgroundColor = UIColor.whiteColor()
+                calLabel[i].textAlignment = NSTextAlignment.Center
+                calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
+                calLabel[i].userInteractionEnabled = true;
+                calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
+                calLabel[i].tag = i+1
+                calLabel[i].numberOfLines = 0;
+                calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
+                calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
+                //calLabel[i].sizeToFit();
+                calLabel[i].layer.masksToBounds = true
+                calLabel[i].layer.cornerRadius = 40.0
+                self.view.addSubview(calLabel[i])
+                i++
+            }
+            
         }
+
+        
+        
+//        for(var i = 0; i<jsonArray.count; i++){
+//            calLabel.insert(UILabel(), atIndex: i)
+//            calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
+//            calLabel[i].text = name
+//            calLabel[i].backgroundColor = UIColor.whiteColor()
+//            calLabel[i].textAlignment = NSTextAlignment.Center
+//            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
+//            calLabel[i].userInteractionEnabled = true;
+//            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
+//            calLabel[i].tag = i+1
+//            calLabel[i].numberOfLines = 0;
+//            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
+//            calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
+//            //calLabel[i].sizeToFit();
+//            calLabel[i].layer.masksToBounds = true
+//            calLabel[i].layer.cornerRadius = 40.0
+//            self.view.addSubview(calLabel[i])
+//        }
         
     }
+    
 }
+
