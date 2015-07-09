@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class GenreSelectViewController: UIViewController{
+class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
     
     //全てのジャンルを設置
     let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "ウイスキー", "酒", "焼酎", "ワイン"]
@@ -16,7 +16,8 @@ class GenreSelectViewController: UIViewController{
     let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
     //スクリーンの高さ
     let screenHeight = Int(UIScreen.mainScreen().bounds.size.height);
-    
+    //ジャンルラベルの作成
+    var calLabel: [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class GenreSelectViewController: UIViewController{
     //ジャンルを8種類を設置する
     func setView(){
         
-        var calLabel: [UILabel] = []
+        
         for(var i = 0; i<8; i++){
             calLabel.insert(UILabel(), atIndex: i)
             calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
@@ -61,10 +62,48 @@ class GenreSelectViewController: UIViewController{
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("ラベルを押しました")
+        var touchGenre: String = ""
+        //タップしたラベルの取得
+        for(var i=0; i<8; i++){
+            for touch: AnyObject in touches {
+                var t: UITouch = touch as! UITouch
+                if(t.view.tag == self.calLabel[i].tag){
+                    println(calLabel[i].tag)
+                    touchGenre = calLabel[i].text!
+                }
+            }
+        }
+        println(touchGenre)
         
+        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
+        
+        // Viewを移動する.
+        self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
+    }
+
+//    func touch(search: UIButton){
+//        
+//        // 遷移するViewを定義する.
+//        let drinkViewController: UIViewController = DrinkSelectViewController()
+//        
+//        // Viewの移動する.
+//        self.presentViewController(drinkViewController, animated: false, completion: nil)
+//    }
+    
+    func onClickMyButton(){
+//        
+//        // 遷移するViewを定義する.
+//        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
+//        
+//        // Viewを移動する.
+//        self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
         
     }
     
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
 }

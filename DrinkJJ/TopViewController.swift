@@ -7,21 +7,23 @@
 //
 
 import UIKit
-class TopViewController: UIViewController, UIScrollViewDelegate{
+
+class TopViewController: UIViewController {
     
     //画面サイズ
     let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
     let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        println("bbb")
         
         start()
-
+        
     }
     
-
+    
     func start(){
         // ボタンを生成する.
         let nextButton: UIButton = UIButton(frame: CGRectMake(0, 0, screenRotationWidth/2, screenRotationHeight/10))
@@ -39,15 +41,18 @@ class TopViewController: UIViewController, UIScrollViewDelegate{
     
     
     func onClickMyButton(){
+        
         // 遷移するViewを定義する.
         let genreSelectViewController: UIViewController = GenreSelectViewController()
         
-        // アニメーションを設定する.
-        genreSelectViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
-        
-        // Viewの移動する.
-        self.presentViewController(genreSelectViewController, animated: true, completion: nil)
+        // Viewを移動する.
+        self.presentViewController(genreSelectViewController, animated: false, completion: nil)
         
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }
