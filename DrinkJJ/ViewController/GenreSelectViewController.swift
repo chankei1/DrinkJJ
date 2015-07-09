@@ -22,6 +22,12 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // GenreSelectViewControllerのタイトルを設定する.
+        self.title = "ジャンル選択"
+        
+        // Viewの背景色を定義する.
+        self.view.backgroundColor = UIColor.greenColor()
+        
         println(rect)
         println(screenWidth)//幅
         println(screenHeight)//高さ
@@ -45,7 +51,7 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
             calLabel[i].text = genreMenu[i]
             calLabel[i].backgroundColor = UIColor.whiteColor()
             calLabel[i].textAlignment = NSTextAlignment.Center
-            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/6+(i/2*100))
+            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
             calLabel[i].userInteractionEnabled = true;
             calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:20)
             calLabel[i].tag = i+1
@@ -62,23 +68,40 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("ラベルを押しました")
-        var touchGenre: String = ""
+        var touchGenreName: String = ""
+        var touchGenreTag: Int = 0
         //タップしたラベルの取得
         for(var i=0; i<8; i++){
             for touch: AnyObject in touches {
                 var t: UITouch = touch as! UITouch
                 if(t.view.tag == self.calLabel[i].tag){
                     println(calLabel[i].tag)
-                    touchGenre = calLabel[i].text!
+                    touchGenreName = calLabel[i].text!
+                    touchGenreTag = calLabel[i].tag
                 }
             }
         }
-        println(touchGenre)
+        
+        println("タップしたジャンル名：\(touchGenreName)")
+        println("タップしたジャンルのタグ：\(touchGenreTag)")
         
         let drinkSelectViewController: UIViewController = DrinkSelectViewController()
         
-        // Viewを移動する.
-        self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
+        switch touchGenreTag {
+        case 1:
+            // Viewを移動する.
+            //self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
+            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
+        case 2:
+            println("2")
+        case 3:
+            println("3")
+        
+        default:
+            break
+        }
+        
+
     }
 
 //    func touch(search: UIButton){

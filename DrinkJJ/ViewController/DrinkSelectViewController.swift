@@ -18,6 +18,12 @@ class DrinkSelectViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // GenreSelectViewControllerのタイトルを設定する.
+        self.title = "メニュー選択"
+        // Viewの背景色を定義する.
+        self.view.backgroundColor = UIColor.greenColor()
+        
         println("ドリンク選択")
         
         //jsonファイルの読み込み
@@ -35,11 +41,11 @@ class DrinkSelectViewController: UIViewController{
         
         for(var i = 0; i<jsonArray.count; i++){
             calLabel.insert(UILabel(), atIndex: i)
-            calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
+            calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
             calLabel[i].text = jsonArray[i]["name"] as! String
             calLabel[i].backgroundColor = UIColor.whiteColor()
             calLabel[i].textAlignment = NSTextAlignment.Center
-            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/6+(i/2*100))
+            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
             calLabel[i].userInteractionEnabled = true;
             calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
             calLabel[i].tag = i+1
