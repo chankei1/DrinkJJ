@@ -42,7 +42,7 @@ class DrinkSelectViewController: UIViewController{
         for(var i = 0; i<jsonArray.count; i++){
             calLabel.insert(UILabel(), atIndex: i)
             calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
-            calLabel[i].text = jsonArray[i]["name"] as! String
+            calLabel[i].text = jsonArray[i]["name"] as? String
             calLabel[i].backgroundColor = UIColor.whiteColor()
             calLabel[i].textAlignment = NSTextAlignment.Center
             calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
