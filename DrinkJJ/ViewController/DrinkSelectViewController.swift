@@ -7,19 +7,29 @@
 //
 
 import UIKit
-class DrinkSelectViewController: UIViewController {
+class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
     
     var genreTagNum:Int = 0
     
     //スクリーンの幅
-    let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
+    var screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
     //スクリーンの高さ
-    let screenHeight = Int(UIScreen.mainScreen().bounds.size.height);
+    var screenHeight = Int(UIScreen.mainScreen().bounds.size.height);
     //ジャンルラベルの作成
     var calLabel: [UILabel] = []
     
+    
+    //UIScrollViewの作成
+    let drinkSelectScrView = UIScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        drinkSelectScrView.frame = self.view.frame
+        drinkSelectScrView.backgroundColor = UIColor.redColor()
+        
+        drinkSelectScrView.delegate = self
+    
         
         // GenreSelectViewControllerのタイトルを設定する.
         self.title = "メニュー選択"
@@ -38,7 +48,7 @@ class DrinkSelectViewController: UIViewController {
         //メニューを入れておく場所
         var genre = []
         //println(jsonArray)
-        
+        println("aaa")
         println(jsonArray.count)
         println(genreTagNum)
         //println(jsonArray["category_id"])
@@ -48,11 +58,11 @@ class DrinkSelectViewController: UIViewController {
             if(genreTagNum == data["category_id"] as! Int){
                 name = data["name"] as! String
                 calLabel.insert(UILabel(), atIndex: i)
-                calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
+                calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
                 calLabel[i].text = name
                 calLabel[i].backgroundColor = UIColor.whiteColor()
                 calLabel[i].textAlignment = NSTextAlignment.Center
-                calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
+                calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/9+(i/2*100))
                 calLabel[i].userInteractionEnabled = true;
                 calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
                 calLabel[i].tag = i+1
@@ -63,31 +73,19 @@ class DrinkSelectViewController: UIViewController {
                 calLabel[i].layer.masksToBounds = true
                 calLabel[i].layer.cornerRadius = 40.0
                 self.view.addSubview(calLabel[i])
+                //スクロール
+                drinkSelectScrView.addSubview(calLabel[i])
                 i++
             }
             
         }
-
+        println("iの値：\(i)")
+        //スクリーン何枚分かを指定する
+        //drinkSelectScrView.contentSize = CGSizeMake(320, 480*2);
+        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(i/2*120));
+        //drinkSelectScrView.contentSize = CGSizeMake(screenWidth, screenHeight*2);  (CGFloat)(70+menusNum/3*150)
         
-        
-//        for(var i = 0; i<jsonArray.count; i++){
-//            calLabel.insert(UILabel(), atIndex: i)
-//            calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
-//            calLabel[i].text = name
-//            calLabel[i].backgroundColor = UIColor.whiteColor()
-//            calLabel[i].textAlignment = NSTextAlignment.Center
-//            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
-//            calLabel[i].userInteractionEnabled = true;
-//            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
-//            calLabel[i].tag = i+1
-//            calLabel[i].numberOfLines = 0;
-//            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
-//            calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
-//            //calLabel[i].sizeToFit();
-//            calLabel[i].layer.masksToBounds = true
-//            calLabel[i].layer.cornerRadius = 40.0
-//            self.view.addSubview(calLabel[i])
-//        }
+        self.view.addSubview(drinkSelectScrView)
         
     }
     
