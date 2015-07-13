@@ -20,7 +20,7 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
     
     
     //UIScrollViewの作成
-    let drinkSelectScrView = UIScrollView()
+    let drinkSelectScrView = MenuTouchScrView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
         drinkSelectScrView.backgroundColor = UIColor.redColor()
         
         drinkSelectScrView.delegate = self
+        drinkSelectScrView.userInteractionEnabled = true
     
         
         // GenreSelectViewControllerのタイトルを設定する.

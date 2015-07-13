@@ -86,57 +86,15 @@ class GenreSelectViewController: UIViewController{
         println("タップしたジャンル名：\(touchGenreName)")
         println("タップしたジャンルのタグ：\(touchGenreTag)")
         
+        
         let drinkSelectViewController = DrinkSelectViewController()
         //タップ判定
         if(touchGenreTag != 0){
             drinkSelectViewController.genreTagNum = touchGenreTag
             self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
         }
-        
-
-//        switch touchGenreTag {
-//        case 1:
-//            println("1")
-//            
-//            // Viewを移動する.
-//            //self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
-//            drinkSelectViewController.genreTagNum = touchGenreTag
-//            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
-//            
-//        case 2:
-//            println("2")
-//            drinkSelectViewController.genreTagNum = touchGenreTag
-//            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
-//            
-//        case 3:
-//            println("3")
-//            
-//        default:
-//            break
-//        }
-        
 
     }
-
-//    func touch(search: UIButton){
-//        
-//        // 遷移するViewを定義する.
-//        let drinkViewController: UIViewController = DrinkSelectViewController()
-//        
-//        // Viewの移動する.
-//        self.presentViewController(drinkViewController, animated: false, completion: nil)
-//    }
-    
-    func onClickMyButton(){
-//        
-//        // 遷移するViewを定義する.
-//        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
-//        
-//        // Viewを移動する.
-//        self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
-        
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

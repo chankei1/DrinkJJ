@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183508A51B53B92F00455F5C /* MenuTouchScrView.swift */; };
 		185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07931B4AA79100CA7009 /* AppDelegate.swift */; };
 		185C07991B4AA79100CA7009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C07971B4AA79100CA7009 /* Main.storyboard */; };
 		185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C079A1B4AA79100CA7009 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183508A51B53B92F00455F5C /* MenuTouchScrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTouchScrView.swift; path = ScrollView/MenuTouchScrView.swift; sourceTree = "<group>"; };
 		185C078E1B4AA79100CA7009 /* DrinkJJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkJJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C07921B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185C07931B4AA79100CA7009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183508A31B53AE8E00455F5C /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				183508A51B53B92F00455F5C /* MenuTouchScrView.swift */,
+			);
+			name = ScrollView;
+			sourceTree = "<group>";
+		};
+		183508A41B53AEE300455F5C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 		185C07851B4AA79100CA7009 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +115,9 @@
 			children = (
 				185C07931B4AA79100CA7009 /* AppDelegate.swift */,
 				18BAEC641B4C959A00FC19D0 /* ViewController.swift */,
-				18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */,
 				18EA32B81B4AC88700CE8D73 /* ViewController */,
+				183508A31B53AE8E00455F5C /* ScrollView */,
+				183508A41B53AEE300455F5C /* JSON */,
 				185C07971B4AA79100CA7009 /* Main.storyboard */,
 				185C079A1B4AA79100CA7009 /* Images.xcassets */,
 				185C079C1B4AA79100CA7009 /* LaunchScreen.xib */,
@@ -252,6 +271,7 @@
 				18BAEC651B4C959A00FC19D0 /* ViewController.swift in Sources */,
 				1888C0F01B4EFDD10090D278 /* TopViewController.swift in Sources */,
 				18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */,
+				183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */,
 				18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrink.swift in Sources */,
 				18EA32D61B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift in Sources */,
 				18EA32D71B4ACAFA00CE8D73 /* DrinkOnePoint.swift in Sources */,
