@@ -6,33 +6,27 @@
 //  Copyright (c) 2015年 Keisuke.K. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MenuTouchScrView: UIScrollView {
-    
-    //var drinkSelectViewController = DrinkSelectViewController()
+    var Delegate: ScrollViewDelegate!
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_began")
+        //println("touch_began")
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_moved")
+        //println("touch_moved")
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_ended")
-        
-        
+        //println("touch_ended")
+        var a:Int = 0
         for touch: AnyObject in touches {
             var t: UITouch = touch as! UITouch
-            
-            println("Menu　tagName：\(t.view.tag)")
-            
-            
+            println("Menu_tagName：\(t.view.tag)")
+            a = Int(t.view.tag)
+            self.Delegate.modalChanged(Int(t.view.tag))
         }
-        
-        
     }
 }

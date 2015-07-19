@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183508A51B53B92F00455F5C /* MenuTouchScrView.swift */; };
+		183508A81B53DC7A00455F5C /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 183508A71B53DC7A00455F5C /* beer.png */; };
 		185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07931B4AA79100CA7009 /* AppDelegate.swift */; };
 		185C07991B4AA79100CA7009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C07971B4AA79100CA7009 /* Main.storyboard */; };
 		185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C079A1B4AA79100CA7009 /* Images.xcassets */; };
 		185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185C079C1B4AA79100CA7009 /* LaunchScreen.xib */; };
 		185C07AA1B4AA79100CA7009 /* DrinkJJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07A91B4AA79100CA7009 /* DrinkJJTests.swift */; };
 		1888C0F01B4EFDD10090D278 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888C0EF1B4EFDD10090D278 /* TopViewController.swift */; };
+		1897A40E1B5C1A940020BB4A /* ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897A40D1B5C1A940020BB4A /* ScrollViewDelegate.swift */; };
 		18BAEC651B4C959A00FC19D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BAEC641B4C959A00FC19D0 /* ViewController.swift */; };
 		18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */; };
 		18EA32CD1B4ACAE500CE8D73 /* DrinkDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */; };
@@ -37,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		183508A51B53B92F00455F5C /* MenuTouchScrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTouchScrView.swift; path = ScrollView/MenuTouchScrView.swift; sourceTree = "<group>"; };
+		183508A71B53DC7A00455F5C /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		185C078E1B4AA79100CA7009 /* DrinkJJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkJJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C07921B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185C07931B4AA79100CA7009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		185C07A81B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185C07A91B4AA79100CA7009 /* DrinkJJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkJJTests.swift; sourceTree = "<group>"; };
 		1888C0EF1B4EFDD10090D278 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = ViewController/TopViewController.swift; sourceTree = "<group>"; };
+		1897A40D1B5C1A940020BB4A /* ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewDelegate.swift; sourceTree = "<group>"; };
 		18BAEC641B4C959A00FC19D0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuJSON.txt; sourceTree = "<group>"; };
 		18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkDataViewController.swift; path = ViewController/DrinkDataViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				183508A51B53B92F00455F5C /* MenuTouchScrView.swift */,
+				1897A40D1B5C1A940020BB4A /* ScrollViewDelegate.swift */,
 			);
 			name = ScrollView;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		185C07911B4AA79100CA7009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				183508A71B53DC7A00455F5C /* beer.png */,
 				185C07921B4AA79100CA7009 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185C07991B4AA79100CA7009 /* Main.storyboard in Resources */,
+				183508A81B53DC7A00455F5C /* beer.png in Resources */,
 				18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */,
 				185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */,
 				185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */,
@@ -268,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1897A40E1B5C1A940020BB4A /* ScrollViewDelegate.swift in Sources */,
 				18BAEC651B4C959A00FC19D0 /* ViewController.swift in Sources */,
 				1888C0F01B4EFDD10090D278 /* TopViewController.swift in Sources */,
 				18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */,

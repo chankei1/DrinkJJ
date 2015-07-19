@@ -7,9 +7,10 @@
 //
 
 import UIKit
-class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
+class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
-    var genreTagNum:Int = 0
+    var genreTagNum: Int = 0
+    var genreName: String = ""
     
     //スクリーンの幅
     var screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
@@ -24,11 +25,13 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let drinkDataViewController = DrinkDataViewController()
+
         drinkSelectScrView.frame = self.view.frame
         drinkSelectScrView.backgroundColor = UIColor.redColor()
         
-        drinkSelectScrView.delegate = self
+        //drinkSelectScrView.delegate = self
+        drinkSelectScrView.Delegate = self
         drinkSelectScrView.userInteractionEnabled = true
     
         
@@ -36,8 +39,6 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
         self.title = "メニュー選択"
         // Viewの背景色を定義する.
         self.view.backgroundColor = UIColor.greenColor()
-        
-        println("ドリンク選択")
         
         //jsonファイルの読み込み
         var path = NSBundle.mainBundle().pathForResource("MenuJSON", ofType:"txt")
@@ -49,9 +50,9 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
         //メニューを入れておく場所
         var genre = []
         //println(jsonArray)
-        println("aaa")
         println(jsonArray.count)
         println(genreTagNum)
+        println(genreName)
         //println(jsonArray["category_id"])
         var i = 0
         var name:String = ""
@@ -88,7 +89,21 @@ class DrinkSelectViewController: UIViewController, UIScrollViewDelegate{
         
         self.view.addSubview(drinkSelectScrView)
         
+        //var tagnum = MenuTouchScrView.touchesEnded(getTag)
+        //self.navigationController?.pushViewController(drinkDataViewController, animated: true)
+        //println("タップしたドリンクのタグ：\(drinkTagNum)")
     }
+    
+    func setDrinkView(){
+        
+        
+    }
+    
+    
+    func modalChanged(TouchNumber: Int) {
+        println("タップしたドリンクのtag:\(TouchNumber)")
+    }
+
     
 }
 
