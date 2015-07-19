@@ -24,8 +24,6 @@ class MenuTouchScrView: UIScrollView {
         var a:Int = 0
         for touch: AnyObject in touches {
             var t: UITouch = touch as! UITouch
-            println("Menu_tagName：\(t.view.tag)")
-            a = Int(t.view.tag)
             self.Delegate.modalChanged(Int(t.view.tag))
         }
     }

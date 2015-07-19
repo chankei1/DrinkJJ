@@ -18,8 +18,6 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // BarButtonItemを作成する.
-        //let myBarButton_1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "onClickMyBarButton:")
         // NavigationBarを取得する.
         self.navigationController?.navigationBar
         // NavigationBarの表示する.
@@ -28,8 +26,6 @@ class TopViewController: UIViewController {
         self.navigationItem
         // タイトルを設定する.
         self.navigationItem.title = "DinkJJ"
-        // Barの左側に配置する.
-        //self.navigationItem.setLeftBarButtonItem(myBarButton_1, animated: true)
         
         println("bbb")
         
@@ -60,7 +56,6 @@ class TopViewController: UIViewController {
         let genreSelectViewController: UIViewController = GenreSelectViewController()
         
         // Viewを移動する.
-        //self.presentViewController(genreSelectViewController, animated: false, completion: nil)
         self.navigationController?.pushViewController(genreSelectViewController, animated: true)
         
     }

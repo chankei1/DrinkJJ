@@ -28,45 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = myNavigationController
         
         self.window?.makeKeyAndVisible()
-        
-        println("aaaaa")
-        //genreSelectView()
-        //genreSelectView()
-        //topView()
 
         
         return true
     }
-    
-    
-    func topView(){
-        // ViewControllerを生成する.
-        let myTopViewController: TopViewController = TopViewController()
-        // Navication Controllerを生成する.
-        let myNavigationController: UINavigationController = UINavigationController(rootViewController: myTopViewController)
-        // UIWindowを生成する.
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        // rootViewControllerにNatigationControllerを設定する.
-        self.window?.rootViewController = myTopViewController
-        
-        self.window?.makeKeyAndVisible()
-    }
-    
-    func genreSelectView(){
-        // ViewControllerを生成する.
-        let myGenreSelectViewController: GenreSelectViewController = GenreSelectViewController()
-        
-        // UIWindowを生成する.
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        // rootViewControllerにNatigationControllerを設定する.
-        self.window?.rootViewController = myGenreSelectViewController
-        
-        self.window?.makeKeyAndVisible()
-    }
-    
-    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

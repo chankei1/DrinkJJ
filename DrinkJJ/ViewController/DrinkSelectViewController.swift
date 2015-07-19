@@ -30,7 +30,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         drinkSelectScrView.frame = self.view.frame
         drinkSelectScrView.backgroundColor = UIColor.redColor()
         
-        //drinkSelectScrView.delegate = self
+        //DelegateとはMenuTouchScrViewのDelegateのこと. delegateだとUIScrollViewDelegateになってしまう.
         drinkSelectScrView.Delegate = self
         drinkSelectScrView.userInteractionEnabled = true
     
@@ -40,6 +40,18 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         // Viewの背景色を定義する.
         self.view.backgroundColor = UIColor.greenColor()
         
+        setDrinkView()
+        
+        self.view.addSubview(drinkSelectScrView)
+    }
+    
+    /*
+    // JSONからデータを取得して表示する
+    // jsonArray.count :全ドリンクの種類
+    // genreTagNum :タップしたジャンルのタグナンバー
+    // genreName :タップしたジャンルの名前
+    */
+    func setDrinkView(){
         //jsonファイルの読み込み
         var path = NSBundle.mainBundle().pathForResource("MenuJSON", ofType:"txt")
         var jsondata = NSData(contentsOfFile: path!)
@@ -49,53 +61,37 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         
         //メニューを入れておく場所
         var genre = []
-        //println(jsonArray)
-        println(jsonArray.count)
-        println(genreTagNum)
-        println(genreName)
-        //println(jsonArray["category_id"])
-        var i = 0
+        var drinkNum = 0
         var name:String = ""
+        
         for data in jsonArray{
             if(genreTagNum == data["category_id"] as! Int){
                 name = data["name"] as! String
-                calLabel.insert(UILabel(), atIndex: i)
-                calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
-                calLabel[i].text = name
-                calLabel[i].backgroundColor = UIColor.whiteColor()
-                calLabel[i].textAlignment = NSTextAlignment.Center
-                calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/9+(i/2*100))
-                calLabel[i].userInteractionEnabled = true;
-                calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
-                calLabel[i].tag = i+1
-                calLabel[i].numberOfLines = 0;
-                calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
-                calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
+                calLabel.insert(UILabel(), atIndex: drinkNum)
+                calLabel[drinkNum] = UILabel(frame: CGRectMake(0,0,80,80))
+                calLabel[drinkNum].text = name
+                calLabel[drinkNum].backgroundColor = UIColor.whiteColor()
+                calLabel[drinkNum].textAlignment = NSTextAlignment.Center
+                calLabel[drinkNum].layer.position = CGPoint(x: screenWidth/3+(drinkNum%2*100), y: screenHeight/9+(drinkNum/2*100))
+                calLabel[drinkNum].userInteractionEnabled = true;
+                calLabel[drinkNum].font = UIFont(name:"HelveticaNeue-Bold",size:25)
+                calLabel[drinkNum].tag = drinkNum+1
+                calLabel[drinkNum].numberOfLines = 0;
+                calLabel[drinkNum].font = UIFont.systemFontOfSize(12);//文字サイズ
+                calLabel[drinkNum].textAlignment = NSTextAlignment.Center//センター揃え
                 //calLabel[i].sizeToFit();
-                calLabel[i].layer.masksToBounds = true
-                calLabel[i].layer.cornerRadius = 40.0
-                self.view.addSubview(calLabel[i])
+                calLabel[drinkNum].layer.masksToBounds = true
+                calLabel[drinkNum].layer.cornerRadius = 40.0
+                self.view.addSubview(calLabel[drinkNum])
                 //スクロール
-                drinkSelectScrView.addSubview(calLabel[i])
-                i++
+                drinkSelectScrView.addSubview(calLabel[drinkNum])
+                drinkNum++
             }
             
         }
-        println("iの値：\(i)")
+        println("ドリンクの数:\(drinkNum)")
         //スクリーン何枚分かを指定する
-        //drinkSelectScrView.contentSize = CGSizeMake(320, 480*2);
-        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(i/2*120));
-        //drinkSelectScrView.contentSize = CGSizeMake(screenWidth, screenHeight*2);  (CGFloat)(70+menusNum/3*150)
-        
-        self.view.addSubview(drinkSelectScrView)
-        
-        //var tagnum = MenuTouchScrView.touchesEnded(getTag)
-        //self.navigationController?.pushViewController(drinkDataViewController, animated: true)
-        //println("タップしたドリンクのタグ：\(drinkTagNum)")
-    }
-    
-    func setDrinkView(){
-        
+        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(drinkNum/2*120));
         
     }
     
