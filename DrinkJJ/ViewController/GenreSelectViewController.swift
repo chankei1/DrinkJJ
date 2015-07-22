@@ -99,7 +99,7 @@ class GenreSelectViewController: UIViewController{
         //タップ判定
         if(touchGenreTag != 0){
             drinkSelectViewController.genreTagNum = touchGenreTag
-            drinkSelectViewController.genreName = touchGenreName
+            drinkSelectViewController.titleGenreName = touchGenreName
             self.navigationController?.pushViewController(drinkSelectViewController, animated: false)
         }
 

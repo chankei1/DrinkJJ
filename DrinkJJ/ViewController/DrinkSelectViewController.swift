@@ -10,7 +10,8 @@ import UIKit
 class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
     var genreTagNum: Int = 0
-    var genreName: String = ""
+    var titleGenreName: String = ""
+    var drinkName: [String] = []
     
     let drinkDataViewController = DrinkDataViewController()
     
@@ -30,6 +31,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         
         var keisuke2: Int = 0
         
+        //背景の追加
         let myImage: UIImage = UIImage(named: "backimage0.png")!
         let myImageView: UIImageView = UIImageView()
         myImageView.image = myImage
@@ -46,7 +48,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
         
         // GenreSelectViewControllerのタイトルを設定する.
-        self.title = genreName
+        self.title = titleGenreName
         
         setDrinkView()
         
@@ -93,8 +95,13 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
                 calLabel[drinkNum].layer.masksToBounds = true
                 calLabel[drinkNum].layer.cornerRadius = 40.0
                 self.view.addSubview(calLabel[drinkNum])
+        
+                //空の配列に選択したジャンルの全ドリンクを格納する
+                drinkName.append(name)
+                
                 //スクロール
                 drinkSelectScrView.addSubview(calLabel[drinkNum])
+                
                 drinkNum++
             }
             
@@ -113,13 +120,9 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         
         println("タップしたドリンクのtag:\(TouchNumber)")
         
-//        if(){
-//           touchDrinkName = name
-//        }
-//    
-//        drinkDataViewController.genreName = touchDrinkName
-        
-      
+        println(drinkName[TouchNumber-1])
+    
+        drinkDataViewController.titleDrinkName = drinkName[TouchNumber-1]
         
         if(TouchNumber != 0){
            self.navigationController?.pushViewController(drinkDataViewController, animated: false)
