@@ -18,6 +18,12 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+        
         // NavigationBarを取得する.
         self.navigationController?.navigationBar
         // NavigationBarの表示する.
@@ -41,6 +47,7 @@ class TopViewController: UIViewController {
         nextButton.layer.masksToBounds = true
         nextButton.setTitle("ドリンクを作る", forState: .Normal)
         nextButton.layer.cornerRadius = 20.0
+        nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height/1.5)
         nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
         
@@ -56,7 +63,7 @@ class TopViewController: UIViewController {
         let genreSelectViewController: UIViewController = GenreSelectViewController()
         
         // Viewを移動する.
-        self.navigationController?.pushViewController(genreSelectViewController, animated: true)
+        self.navigationController?.pushViewController(genreSelectViewController, animated: false)
         
     }
     

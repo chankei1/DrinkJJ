@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182AA2C91B5E440800D80931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C07971B4AA79100CA7009 /* Main.storyboard */; };
+		182AA2CC1B5E472600D80931 /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 182AA2CB1B5E472600D80931 /* beer.png */; };
+		182AA2CE1B5E47CC00D80931 /* backimage0.png in Resources */ = {isa = PBXBuildFile; fileRef = 182AA2CD1B5E47CC00D80931 /* backimage0.png */; };
 		183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183508A51B53B92F00455F5C /* MenuTouchScrView.swift */; };
-		183508A81B53DC7A00455F5C /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 183508A71B53DC7A00455F5C /* beer.png */; };
 		185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07931B4AA79100CA7009 /* AppDelegate.swift */; };
-		185C07991B4AA79100CA7009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C07971B4AA79100CA7009 /* Main.storyboard */; };
 		185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C079A1B4AA79100CA7009 /* Images.xcassets */; };
 		185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185C079C1B4AA79100CA7009 /* LaunchScreen.xib */; };
 		185C07AA1B4AA79100CA7009 /* DrinkJJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07A91B4AA79100CA7009 /* DrinkJJTests.swift */; };
@@ -38,8 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182AA2CB1B5E472600D80931 /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
+		182AA2CD1B5E47CC00D80931 /* backimage0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backimage0.png; sourceTree = "<group>"; };
 		183508A51B53B92F00455F5C /* MenuTouchScrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTouchScrView.swift; path = ScrollView/MenuTouchScrView.swift; sourceTree = "<group>"; };
-		183508A71B53DC7A00455F5C /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		185C078E1B4AA79100CA7009 /* DrinkJJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkJJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C07921B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185C07931B4AA79100CA7009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +136,8 @@
 		185C07911B4AA79100CA7009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				183508A71B53DC7A00455F5C /* beer.png */,
+				182AA2CD1B5E47CC00D80931 /* backimage0.png */,
+				182AA2CB1B5E472600D80931 /* beer.png */,
 				185C07921B4AA79100CA7009 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -253,8 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185C07991B4AA79100CA7009 /* Main.storyboard in Resources */,
-				183508A81B53DC7A00455F5C /* beer.png in Resources */,
+				182AA2C91B5E440800D80931 /* Main.storyboard in Resources */,
+				182AA2CE1B5E47CC00D80931 /* backimage0.png in Resources */,
+				182AA2CC1B5E472600D80931 /* beer.png in Resources */,
 				18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */,
 				185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */,
 				185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */,

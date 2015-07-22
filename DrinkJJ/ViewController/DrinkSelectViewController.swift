@@ -12,6 +12,8 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     var genreTagNum: Int = 0
     var genreName: String = ""
     
+    let drinkDataViewController = DrinkDataViewController()
+    
     //スクリーンの幅
     var screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
     //スクリーンの高さ
@@ -25,10 +27,18 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var keisuke2: Int = 0
+        
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        
         let drinkDataViewController = DrinkDataViewController()
 
         drinkSelectScrView.frame = self.view.frame
-        drinkSelectScrView.backgroundColor = UIColor.redColor()
+        //drinkSelectScrView.backgroundColor = UIColor.redColor()
         
         //DelegateとはMenuTouchScrViewのDelegateのこと. delegateだとUIScrollViewDelegateになってしまう.
         drinkSelectScrView.Delegate = self
@@ -36,13 +46,13 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
         
         // GenreSelectViewControllerのタイトルを設定する.
-        self.title = "メニュー選択"
-        // Viewの背景色を定義する.
-        self.view.backgroundColor = UIColor.greenColor()
+        self.title = genreName
         
         setDrinkView()
         
+        self.view.addSubview(myImageView)
         self.view.addSubview(drinkSelectScrView)
+        
     }
     
     /*
@@ -72,7 +82,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
                 calLabel[drinkNum].text = name
                 calLabel[drinkNum].backgroundColor = UIColor.whiteColor()
                 calLabel[drinkNum].textAlignment = NSTextAlignment.Center
-                calLabel[drinkNum].layer.position = CGPoint(x: screenWidth/3+(drinkNum%2*100), y: screenHeight/9+(drinkNum/2*100))
+                calLabel[drinkNum].layer.position = CGPoint(x: screenWidth/3+(drinkNum%2*100), y: screenHeight/4+(drinkNum/2*100))
                 calLabel[drinkNum].userInteractionEnabled = true;
                 calLabel[drinkNum].font = UIFont(name:"HelveticaNeue-Bold",size:25)
                 calLabel[drinkNum].tag = drinkNum+1
@@ -90,6 +100,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
             
         }
         println("ドリンクの数:\(drinkNum)")
+        
         //スクリーン何枚分かを指定する
         drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(drinkNum/2*120));
         
@@ -97,9 +108,24 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
     
     func modalChanged(TouchNumber: Int) {
+        
+        let drinkDataViewController = DrinkDataViewController()
+        
         println("タップしたドリンクのtag:\(TouchNumber)")
+        
+//        if(){
+//           touchDrinkName = name
+//        }
+//    
+//        drinkDataViewController.genreName = touchDrinkName
+        
+      
+        
+        if(TouchNumber != 0){
+           self.navigationController?.pushViewController(drinkDataViewController, animated: false)
+        }
+        
     }
-
     
 }
 

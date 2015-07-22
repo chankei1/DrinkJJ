@@ -23,11 +23,19 @@ class GenreSelectViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //背景の作成
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+
+        
         // GenreSelectViewControllerのタイトルを設定する.
         self.title = "ジャンル選択"
         
         // Viewの背景色を定義する.
-        self.view.backgroundColor = UIColor.greenColor()
+        //self.view.backgroundColor = UIColor.greenColor()
         
         println(rect)
         println(screenWidth)//幅
@@ -92,7 +100,7 @@ class GenreSelectViewController: UIViewController{
         if(touchGenreTag != 0){
             drinkSelectViewController.genreTagNum = touchGenreTag
             drinkSelectViewController.genreName = touchGenreName
-            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
+            self.navigationController?.pushViewController(drinkSelectViewController, animated: false)
         }
 
     }
