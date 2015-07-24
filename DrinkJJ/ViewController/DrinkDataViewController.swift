@@ -71,7 +71,7 @@ class DrinkDataViewController: UIViewController {
         nextButton.layer.cornerRadius = 20.0
         nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.6)
-        nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
+        nextButton.addTarget(self, action: "classificationDrinkBtn", forControlEvents: .TouchUpInside)
         
         // ボタンを追加する.
         self.view.addSubview(nextButton);
@@ -88,7 +88,7 @@ class DrinkDataViewController: UIViewController {
         nextButton.layer.cornerRadius = 20.0
         nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.6)
-        nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
+        nextButton.addTarget(self, action: "descriptionDrinkBtn", forControlEvents: .TouchUpInside)
         
         // ボタンを追加する.
         self.view.addSubview(nextButton);
@@ -105,7 +105,7 @@ class DrinkDataViewController: UIViewController {
         nextButton.layer.cornerRadius = 20.0
         nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.3)
-        nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
+        nextButton.addTarget(self, action: "howToMakeDrinkBtn", forControlEvents: .TouchUpInside)
         
         // ボタンを追加する.
         self.view.addSubview(nextButton);
@@ -122,7 +122,7 @@ class DrinkDataViewController: UIViewController {
         nextButton.layer.cornerRadius = 20.0
         nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.3)
-        nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
+        nextButton.addTarget(self, action: "drinkOnePointDrinkBtn", forControlEvents: .TouchUpInside)
         
         // ボタンを追加する.
         self.view.addSubview(nextButton);
@@ -130,7 +130,7 @@ class DrinkDataViewController: UIViewController {
     }
     
     //ボタンを押した時の画面遷移処理
-    func onClickMyButton(){
+    func classificationDrinkBtn(){
         
         // 遷移するViewを定義し
         // Viewを移動する
@@ -138,6 +138,39 @@ class DrinkDataViewController: UIViewController {
         self.navigationController?.pushViewController(genreSelectViewController, animated: false)
         
     }
+    
+    
+    func descriptionDrinkBtn(){
+        
+        // 遷移するViewを定義し
+        // Viewを移動する
+        let genreSelectViewController: UIViewController = GenreSelectViewController()
+        self.navigationController?.pushViewController(genreSelectViewController, animated: false)
+        
+    }
+    
+    
+    func howToMakeDrinkBtn(){
+        
+        // 遷移するViewを定義し
+        // Viewを移動する
+        let genreSelectViewController: UIViewController = GenreSelectViewController()
+        self.navigationController?.pushViewController(genreSelectViewController, animated: false)
+        
+    }
+    
+    
+    
+    func drinkOnePointDrinkBtn(){
+        
+        // 遷移するViewを定義し
+        // Viewを移動する
+        let genreSelectViewController: UIViewController = GenreSelectViewController()
+        self.navigationController?.pushViewController(genreSelectViewController, animated: false)
+        
+    }
+    
+    
     
 
 }

@@ -35,8 +35,6 @@ class TopViewController: UIViewController {
         // タイトルを設定する.
         self.navigationItem.title = "DinkJJ"
         
-        
-        
         start()
         
     }
@@ -48,6 +46,7 @@ class TopViewController: UIViewController {
         nextButton.backgroundColor = UIColor.redColor();
         nextButton.layer.masksToBounds = true
         nextButton.setTitle("ドリンクを作る", forState: .Normal)
+        
         nextButton.layer.cornerRadius = 20.0
         nextButton.alpha = 0.8
         nextButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height/1.5)
@@ -59,11 +58,6 @@ class TopViewController: UIViewController {
         
     }
     
-    //ボタンの領域外で指を話した場合の処理
-    func outClickNextButton(){
-        self.nextButton.backgroundColor = UIColor.redColor()
-    }
-    
     //ボタンを押している状態の処理
     func moveClickNextButton(){
         //self.nextButton.backgroundColor = UIColor.blackColor()
@@ -72,7 +66,6 @@ class TopViewController: UIViewController {
     
     //ボタンの領域内で指を離したときの処理
     func onClickNextButton(){
-        
         
         /*
         // 遷移するViewを定義する.

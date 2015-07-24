@@ -8,4 +8,5 @@
 
 protocol ScrollViewDelegate{
     func modalChanged(TouchNumber: Int)
+    func touchJudgment(TouchNumber: Int, touchFlg: Bool)
 }

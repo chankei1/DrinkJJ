@@ -6,4 +6,11 @@
 //  Copyright (c) 2015年 Keisuke.K. All rights reserved.
 //
 
-import Foundation
+import UIKit
+class DrinkClassificationViewController: ViewController{
+    
+    override func viewDidLoad() {
+        
+    }
+    
+}

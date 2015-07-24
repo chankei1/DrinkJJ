@@ -22,10 +22,10 @@
 		18EA32CD1B4ACAE500CE8D73 /* DrinkDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */; };
 		18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */; };
 		18EA32D61B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */; };
-		18EA32D71B4ACAFA00CE8D73 /* DrinkOnePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */; };
+		18EA32D71B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D01B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift */; };
 		18EA32D81B4ACAFA00CE8D73 /* DrinkSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */; };
 		18EA32D91B4ACAFA00CE8D73 /* GenreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D21B4ACAFA00CE8D73 /* GenreSelectViewController.swift */; };
-		18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */; };
+		18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +58,10 @@
 		18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkDataViewController.swift; path = ViewController/DrinkDataViewController.swift; sourceTree = "<group>"; };
 		18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkClassificationViewController.swift; path = ViewController/DrinkClassificationViewController.swift; sourceTree = "<group>"; };
 		18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkDescriptionViewController.swift; path = ViewController/DrinkDescriptionViewController.swift; sourceTree = "<group>"; };
-		18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkOnePoint.swift; path = ViewController/DrinkOnePoint.swift; sourceTree = "<group>"; };
+		18EA32D01B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkOnePointViewController.swift; path = ViewController/DrinkOnePointViewController.swift; sourceTree = "<group>"; };
 		18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkSelectViewController.swift; path = ViewController/DrinkSelectViewController.swift; sourceTree = "<group>"; };
 		18EA32D21B4ACAFA00CE8D73 /* GenreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenreSelectViewController.swift; path = ViewController/GenreSelectViewController.swift; sourceTree = "<group>"; };
-		18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HowToMakeDrink.swift; path = ViewController/HowToMakeDrink.swift; sourceTree = "<group>"; };
+		18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HowToMakeDrinkViewController.swift; path = ViewController/HowToMakeDrinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +169,8 @@
 				18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */,
 				18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */,
 				18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */,
-				18EA32D01B4ACAFA00CE8D73 /* DrinkOnePoint.swift */,
-				18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrink.swift */,
+				18EA32D01B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift */,
+				18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -284,9 +284,9 @@
 				1888C0F01B4EFDD10090D278 /* TopViewController.swift in Sources */,
 				18EA32D51B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift in Sources */,
 				183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */,
-				18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrink.swift in Sources */,
+				18EA32DA1B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift in Sources */,
 				18EA32D61B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift in Sources */,
-				18EA32D71B4ACAFA00CE8D73 /* DrinkOnePoint.swift in Sources */,
+				18EA32D71B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift in Sources */,
 				18EA32D91B4ACAFA00CE8D73 /* GenreSelectViewController.swift in Sources */,
 				18EA32CD1B4ACAE500CE8D73 /* DrinkDataViewController.swift in Sources */,
 				185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */,

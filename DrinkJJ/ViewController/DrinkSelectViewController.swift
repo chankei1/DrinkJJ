@@ -83,13 +83,13 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
                 calLabel[drinkNum] = UILabel(frame: CGRectMake(0,0,80,80))
                 calLabel[drinkNum].text = name
                 calLabel[drinkNum].backgroundColor = UIColor.whiteColor()
+                calLabel[drinkNum].alpha = 0.8
                 calLabel[drinkNum].textAlignment = NSTextAlignment.Center
                 calLabel[drinkNum].layer.position = CGPoint(x: screenWidth/3+(drinkNum%2*100), y: screenHeight/4+(drinkNum/2*100))
                 calLabel[drinkNum].userInteractionEnabled = true;
-                calLabel[drinkNum].font = UIFont(name:"HelveticaNeue-Bold",size:25)
+                calLabel[drinkNum].font = UIFont(name:"HelveticaNeue-Bold",size:15)
                 calLabel[drinkNum].tag = drinkNum+1
                 calLabel[drinkNum].numberOfLines = 0;
-                calLabel[drinkNum].font = UIFont.systemFontOfSize(12);//文字サイズ
                 calLabel[drinkNum].textAlignment = NSTextAlignment.Center//センター揃え
                 //calLabel[i].sizeToFit();
                 calLabel[drinkNum].layer.masksToBounds = true
@@ -113,19 +113,27 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         
     }
     
+    //タップしたラベルの透明度を変更する
+    func touchJudgment(TouchNumber: Int, touchFlg: Bool){
+        if(TouchNumber != 0){
+            if(touchFlg){
+                calLabel[TouchNumber-1].alpha = 0.5
+            } else {
+                calLabel[TouchNumber-1].alpha = 0.8
+            }
+        }
+    }
     
+    //タップしたラベルを判別し、画面遷移する
     func modalChanged(TouchNumber: Int) {
         
         let drinkDataViewController = DrinkDataViewController()
         
         println("タップしたドリンクのtag:\(TouchNumber)")
         
-        println(drinkName[TouchNumber-1])
-    
-        drinkDataViewController.titleDrinkName = drinkName[TouchNumber-1]
-        
         if(TouchNumber != 0){
-           self.navigationController?.pushViewController(drinkDataViewController, animated: false)
+            drinkDataViewController.titleDrinkName = drinkName[TouchNumber-1]
+            self.navigationController?.pushViewController(drinkDataViewController, animated: false)
         }
         
     }

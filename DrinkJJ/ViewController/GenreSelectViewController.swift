@@ -53,19 +53,18 @@ class GenreSelectViewController: UIViewController{
     //ジャンルを8種類を設置する
     func setView(){
         
-        
         for(var i = 0; i<8; i++){
             calLabel.insert(UILabel(), atIndex: i)
             calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
             calLabel[i].text = genreMenu[i]
             calLabel[i].backgroundColor = UIColor.whiteColor()
+            calLabel[i].alpha = 0.8
             calLabel[i].textAlignment = NSTextAlignment.Center
             calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
             calLabel[i].userInteractionEnabled = true;
-            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:20)
+            calLabel[i].font = UIFont(name:"HiraKakuProN-W6",size:15)
             calLabel[i].tag = i+1
             calLabel[i].numberOfLines = 0;
-            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
             calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
             //calLabel[i].sizeToFit();
             calLabel[i].layer.masksToBounds = true
@@ -74,9 +73,9 @@ class GenreSelectViewController: UIViewController{
         }
     }
     
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("ラベルを押しました")
+    //ラベルから指を離したとき
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        println("touchesEnded")
         var touchGenreName: String = ""
         var touchGenreTag: Int = 0
         //タップしたラベルの取得
@@ -87,6 +86,7 @@ class GenreSelectViewController: UIViewController{
                     println(calLabel[i].tag)
                     touchGenreName = calLabel[i].text!
                     touchGenreTag = calLabel[i].tag
+                    calLabel[i].alpha = 0.8
                 }
             }
         }
@@ -102,6 +102,22 @@ class GenreSelectViewController: UIViewController{
             drinkSelectViewController.titleGenreName = touchGenreName
             self.navigationController?.pushViewController(drinkSelectViewController, animated: false)
         }
+        
+    }
+    
+    //ラベルを押したとき
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        println("touchesBegan")
+        
+        for(var i=0; i<8; i++){
+            for touch: AnyObject in touches {
+                var t: UITouch = touch as! UITouch
+                if(t.view.tag == self.calLabel[i].tag){
+                    calLabel[i].alpha = 0.5
+                }
+            }
+        }
+        
 
     }
     
