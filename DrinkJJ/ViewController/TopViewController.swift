@@ -74,6 +74,7 @@ class TopViewController: UIViewController {
         let genreSelectViewController: UIViewController = GenreSelectViewController()
         self.navigationController?.pushViewController(genreSelectViewController, animated: false)
         
+        //ボタンの色を元に戻す
         nextButton.backgroundColor = UIColor.redColor();
     }
     
