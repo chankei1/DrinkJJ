@@ -11,7 +11,7 @@ import UIKit
 class GenreSelectViewController: UIViewController{
     
     //全てのジャンルを設置
-    let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "ウイスキー", "酒", "焼酎", "ワイン"]
+    let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "シャンパン＆ワイン", "焼酎", "日本酒", "その他お酒"]
     let rect = UIScreen.mainScreen().bounds;
     //スクリーンの幅
     let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);

@@ -61,6 +61,7 @@ class DrinkDataViewController: UIViewController {
         
     }
     
+    
     //分類
     func classificationDrink(){
         // ボタンを生成する.
@@ -132,6 +133,7 @@ class DrinkDataViewController: UIViewController {
         self.view.addSubview(onePointBtn);
         
     }
+    
     
     //分類ボタンを押したときの処理
     func drinkClassificationBtn(){

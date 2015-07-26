@@ -45,6 +45,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         //DelegateとはMenuTouchScrViewのDelegateのこと. delegateだとUIScrollViewDelegateになってしまう.
         drinkSelectScrView.Delegate = self
         drinkSelectScrView.userInteractionEnabled = true
+        drinkSelectScrView.indicatorStyle = UIScrollViewIndicatorStyle.White
     
         
         // GenreSelectViewControllerのタイトルを設定する.

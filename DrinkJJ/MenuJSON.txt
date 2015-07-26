@@ -17,11 +17,19 @@
 },
 {
 "category_id": 1,
-"name": "(瓶ビール)サッポロ"
+"name": "(瓶ビール)サッポロ黒ラベル"
 },
 {
 "category_id": 1,
 "name": "ノンアルコールビール"
+},
+{
+"category_id": 1,
+"name": "ギネスビール"
+},
+{
+"category_id": 2,
+"name": "黒ウーロン茶"
 },
 {
 "category_id": 2,
@@ -38,6 +46,14 @@
 {
 "category_id": 2,
 "name": "オレンジジュース"
+},
+{
+"category_id": 2,
+"name": "ライチミックスジュース"
+},
+{
+"category_id": 2,
+"name": "ゴールドキウイミックスジュース"
 },
 {
 "category_id": 2,
@@ -65,7 +81,7 @@
 },
 {
 "category_id": 2,
-"name": "アルカリイオン水"
+"name": "アルカリイオン水[金城の華]"
 },
 {
 "category_id": 2,
@@ -73,10 +89,186 @@
 },
 {
 "category_id": 2,
-"name": "HOTコーヒー"
+"name": "オリジナルローズティー"
 },
 {
 "category_id": 2,
 "name": "HOTソフトドリンク"
+},
+{
+"category_id": 2,
+"name": "HOTコーヒー"
+},
+{
+"category_id":3,
+"name": "レモンサワー"
+},
+{
+"category_id":3,
+"name": "グレープフルーツサワー"
+},
+{
+"category_id":3,
+"name": "シークァーサーサワー"
+},
+{
+"category_id":3,
+"name": "泡盛シークァーサーサワー"
+},
+{
+"category_id":3,
+"name": "黒ウーロンハイ"
+},
+{
+"category_id":3,
+"name": "ウーロンハイ"
+},
+{
+"category_id":3,
+"name": "緑茶ハイ"
+},
+{
+"category_id":4,
+"name": "カシス"
+},
+{
+"category_id":4,
+"name": "にごりゆず酒"
+},
+{
+"category_id":4,
+"name": "にごり甘露酒"
+},
+{
+"category_id":4,
+"name": "杏オレンジワイン"
+},
+{
+"category_id":4,
+"name": "梅酒"
+},
+{
+"category_id":5,
+"name": "(シャンパン)モエ"
+},
+{
+"category_id":5,
+"name": "(赤)ダニエロ"
+},
+{
+"category_id":5,
+"name": "(赤)ソンジュ・ド バッカス"
+},
+{
+"category_id":5,
+"name": "(赤)ヴァルモアシン"
+},
+{
+"category_id":5,
+"name": "(白)シャブリラ"
+},
+{
+"category_id":5,
+"name": "(白)ミラベル・ヴィオニエ"
+},
+{
+"category_id":5,
+"name": "(白)シャルドネ"
+},
+{
+"category_id":5,
+"name": "グラスワイン(赤/白)"
+},
+{
+"category_id":5,
+"name": "ハウスワイン(赤/白)"
+},
+{
+"category_id":6,
+"name": "(芋)紅一刻"
+},
+{
+"category_id":6,
+"name": "(芋)金時芋"
+},
+{
+"category_id":6,
+"name": "(麦)どぎゃん"
+},
+{
+"category_id":6,
+"name": "(麦)不知火"
+},
+{
+"category_id":6,
+"name": "(甲類焼酎)緋緞"
+},
+{
+"category_id":7,
+"name": "山田錦"
+},
+{
+"category_id":7,
+"name": "天狗舞 山廃生搾り"
+},
+{
+"category_id":7,
+"name": "白鶴吟醸"
+},
+{
+"category_id":7,
+"name": "加賀太鼓 太郎"
+},
+{
+"category_id":7,
+"name": "AKIRA"
+},
+{
+"category_id":7,
+"name": "千枚田"
+},
+{
+"category_id":7,
+"name": "天狗舞 文政六年"
+},
+{
+"category_id":7,
+"name": "加賀雪梅"
+},
+{
+"category_id":7,
+"name": "おんな川"
+},
+{
+"category_id":7,
+"name": "加賀輪 [石川門]"
+},
+{
+"category_id":8,
+"name": "(ボトル)　　叙々苑マッコリ"
+},
+{
+"category_id":8,
+"name": "マッコリ　ストレート"
+},
+{
+"category_id":8,
+"name": "マッコリ　フルーツ"
+},
+{
+"category_id":8,
+"name": "マッコリ　リキュール"
+},
+{
+"category_id":8,
+"name": "(ハイボール)JW黒ラベル"
+},
+{
+"category_id":8,
+"name": "(泡盛)　　よっかこうじ"
+},
+{
+"category_id":8,
+"name": "紹興酒"
 }
 ]
