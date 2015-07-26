@@ -1,5 +1,5 @@
 //
-//  DrinkDescriptionViewController.swift
+//  HowToMakeDrink.swift
 //  DrinkJJ
 //
 //  Created by Keisuke.K on 2015/07/06.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class DrinkDescriptionViewController: ViewController{
+class HowToMakeDrinkViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,7 @@ class DrinkDescriptionViewController: ViewController{
         self.view.addSubview(myImageView)
         
         // GenreSelectViewControllerのタイトルを設定する.
-        self.title = "説明"
-        
+        self.title = "作り方"
     }
-    
+
 }

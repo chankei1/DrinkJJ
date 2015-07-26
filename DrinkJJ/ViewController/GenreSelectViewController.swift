@@ -7,10 +7,11 @@
 //
 
 import UIKit
-class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
+
+class GenreSelectViewController: UIViewController{
     
     //全てのジャンルを設置
-    let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "ウイスキー", "酒", "焼酎", "ワイン"]
+    let genreMenu: [String] = ["ビール", "SD", "サワー", "リキュール", "シャンパン＆ワイン", "焼酎", "日本酒", "その他お酒"]
     let rect = UIScreen.mainScreen().bounds;
     //スクリーンの幅
     let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
@@ -22,11 +23,19 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //背景の作成
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+
+        
         // GenreSelectViewControllerのタイトルを設定する.
         self.title = "ジャンル選択"
         
         // Viewの背景色を定義する.
-        self.view.backgroundColor = UIColor.greenColor()
+        //self.view.backgroundColor = UIColor.greenColor()
         
         println(rect)
         println(screenWidth)//幅
@@ -44,19 +53,18 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
     //ジャンルを8種類を設置する
     func setView(){
         
-        
         for(var i = 0; i<8; i++){
             calLabel.insert(UILabel(), atIndex: i)
             calLabel[i] = UILabel(frame: CGRectMake(0,0,80,80))
             calLabel[i].text = genreMenu[i]
             calLabel[i].backgroundColor = UIColor.whiteColor()
+            calLabel[i].alpha = 0.8
             calLabel[i].textAlignment = NSTextAlignment.Center
             calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
             calLabel[i].userInteractionEnabled = true;
-            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:20)
+            calLabel[i].font = UIFont(name:"HiraKakuProN-W6",size:15)
             calLabel[i].tag = i+1
             calLabel[i].numberOfLines = 0;
-            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
             calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
             //calLabel[i].sizeToFit();
             calLabel[i].layer.masksToBounds = true
@@ -65,9 +73,9 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
         }
     }
     
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("ラベルを押しました")
+    //ラベルから指を離したとき
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        println("touchesEnded")
         var touchGenreName: String = ""
         var touchGenreTag: Int = 0
         //タップしたラベルの取得
@@ -78,6 +86,7 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
                     println(calLabel[i].tag)
                     touchGenreName = calLabel[i].text!
                     touchGenreTag = calLabel[i].tag
+                    calLabel[i].alpha = 0.8
                 }
             }
         }
@@ -85,44 +94,32 @@ class GenreSelectViewController: UIViewController, UIScrollViewDelegate{
         println("タップしたジャンル名：\(touchGenreName)")
         println("タップしたジャンルのタグ：\(touchGenreTag)")
         
-        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
         
-        switch touchGenreTag {
-        case 1:
-            // Viewを移動する.
-            //self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
-            self.navigationController?.pushViewController(drinkSelectViewController, animated: true)
-        case 2:
-            println("2")
-        case 3:
-            println("3")
+        let drinkSelectViewController = DrinkSelectViewController()
+        //タップ判定
+        if(touchGenreTag != 0){
+            drinkSelectViewController.genreTagNum = touchGenreTag
+            drinkSelectViewController.titleGenreName = touchGenreName
+            self.navigationController?.pushViewController(drinkSelectViewController, animated: false)
+        }
         
-        default:
-            break
+    }
+    
+    //ラベルを押したとき
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        println("touchesBegan")
+        
+        for(var i=0; i<8; i++){
+            for touch: AnyObject in touches {
+                var t: UITouch = touch as! UITouch
+                if(t.view.tag == self.calLabel[i].tag){
+                    calLabel[i].alpha = 0.5
+                }
+            }
         }
         
 
     }
-
-//    func touch(search: UIButton){
-//        
-//        // 遷移するViewを定義する.
-//        let drinkViewController: UIViewController = DrinkSelectViewController()
-//        
-//        // Viewの移動する.
-//        self.presentViewController(drinkViewController, animated: false, completion: nil)
-//    }
-    
-    func onClickMyButton(){
-//        
-//        // 遷移するViewを定義する.
-//        let drinkSelectViewController: UIViewController = DrinkSelectViewController()
-//        
-//        // Viewを移動する.
-//        self.presentViewController(drinkSelectViewController, animated: false, completion: nil)
-        
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

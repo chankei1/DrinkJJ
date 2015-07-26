@@ -7,25 +7,64 @@
 //
 
 import UIKit
-class DrinkSelectViewController: UIViewController{
+class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
+    
+    var genreTagNum: Int = 0
+    var titleGenreName: String = ""
+    var drinkName: [String] = []
+    
+    let drinkDataViewController = DrinkDataViewController()
     
     //スクリーンの幅
-    let screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
+    var screenWidth = Int( UIScreen.mainScreen().bounds.size.width);
     //スクリーンの高さ
-    let screenHeight = Int(UIScreen.mainScreen().bounds.size.height);
+    var screenHeight = Int(UIScreen.mainScreen().bounds.size.height);
     //ジャンルラベルの作成
     var calLabel: [UILabel] = []
+    
+    
+    //UIScrollViewの作成
+    let drinkSelectScrView = MenuTouchScrView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var keisuke2: Int = 0
+        
+        //背景の追加
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        
+        let drinkDataViewController = DrinkDataViewController()
+
+        drinkSelectScrView.frame = self.view.frame
+        //drinkSelectScrView.backgroundColor = UIColor.redColor()
+        
+        //DelegateとはMenuTouchScrViewのDelegateのこと. delegateだとUIScrollViewDelegateになってしまう.
+        drinkSelectScrView.Delegate = self
+        drinkSelectScrView.userInteractionEnabled = true
+        drinkSelectScrView.indicatorStyle = UIScrollViewIndicatorStyle.White
+    
+        
         // GenreSelectViewControllerのタイトルを設定する.
-        self.title = "メニュー選択"
-        // Viewの背景色を定義する.
-        self.view.backgroundColor = UIColor.greenColor()
+        self.title = titleGenreName
         
-        println("ドリンク選択")
+        setDrinkView()
         
+        self.view.addSubview(myImageView)
+        self.view.addSubview(drinkSelectScrView)
+        
+    }
+    
+    /*
+    // JSONからデータを取得して表示する
+    // jsonArray.count :全ドリンクの種類
+    // genreTagNum :タップしたジャンルのタグナンバー
+    // genreName :タップしたジャンルの名前
+    */
+    func setDrinkView(){
         //jsonファイルの読み込み
         var path = NSBundle.mainBundle().pathForResource("MenuJSON", ofType:"txt")
         var jsondata = NSData(contentsOfFile: path!)
@@ -35,28 +74,70 @@ class DrinkSelectViewController: UIViewController{
         
         //メニューを入れておく場所
         var genre = []
-        //println(jsonArray)
+        var drinkNum = 0
+        var name:String = ""
         
-        println(jsonArray.count)
+        for data in jsonArray{
+            if(genreTagNum == data["category_id"] as! Int){
+                name = data["name"] as! String
+                calLabel.insert(UILabel(), atIndex: drinkNum)
+                calLabel[drinkNum] = UILabel(frame: CGRectMake(0,0,80,80))
+                calLabel[drinkNum].text = name
+                calLabel[drinkNum].backgroundColor = UIColor.whiteColor()
+                calLabel[drinkNum].alpha = 0.8
+                calLabel[drinkNum].textAlignment = NSTextAlignment.Center
+                calLabel[drinkNum].layer.position = CGPoint(x: screenWidth/3+(drinkNum%2*100), y: screenHeight/4+(drinkNum/2*100))
+                calLabel[drinkNum].userInteractionEnabled = true;
+                calLabel[drinkNum].font = UIFont(name:"HelveticaNeue-Bold",size:15)
+                calLabel[drinkNum].tag = drinkNum+1
+                calLabel[drinkNum].numberOfLines = 0;
+                calLabel[drinkNum].textAlignment = NSTextAlignment.Center//センター揃え
+                //calLabel[i].sizeToFit();
+                calLabel[drinkNum].layer.masksToBounds = true
+                calLabel[drinkNum].layer.cornerRadius = 40.0
+                self.view.addSubview(calLabel[drinkNum])
         
-        for(var i = 0; i<jsonArray.count; i++){
-            calLabel.insert(UILabel(), atIndex: i)
-            calLabel[i] = UILabel(frame: CGRectMake(0,0,90,90))
-            calLabel[i].text = jsonArray[i]["name"] as? String
-            calLabel[i].backgroundColor = UIColor.whiteColor()
-            calLabel[i].textAlignment = NSTextAlignment.Center
-            calLabel[i].layer.position = CGPoint(x: screenWidth/3+(i%2*100), y: screenHeight/4+(i/2*100))
-            calLabel[i].userInteractionEnabled = true;
-            calLabel[i].font = UIFont(name:"HelveticaNeue-Bold",size:25)
-            calLabel[i].tag = i+1
-            calLabel[i].numberOfLines = 0;
-            calLabel[i].font = UIFont.systemFontOfSize(12);//文字サイズ
-            calLabel[i].textAlignment = NSTextAlignment.Center//センター揃え
-            //calLabel[i].sizeToFit();
-            calLabel[i].layer.masksToBounds = true
-            calLabel[i].layer.cornerRadius = 40.0
-            self.view.addSubview(calLabel[i])
+                //空の配列に選択したジャンルの全ドリンクを格納する
+                drinkName.append(name)
+                
+                //スクロール
+                drinkSelectScrView.addSubview(calLabel[drinkNum])
+                
+                drinkNum++
+            }
+            
+        }
+        println("ドリンクの数:\(drinkNum)")
+        
+        //スクリーン何枚分かを指定する
+        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(drinkNum/2*120));
+        
+    }
+    
+    //タップしたラベルの透明度を変更する
+    func touchJudgment(TouchNumber: Int, touchFlg: Bool){
+        if(TouchNumber != 0){
+            if(touchFlg){
+                calLabel[TouchNumber-1].alpha = 0.5
+            } else {
+                calLabel[TouchNumber-1].alpha = 0.8
+            }
+        }
+    }
+    
+    //タップしたラベルを判別し、画面遷移する
+    func modalChanged(TouchNumber: Int) {
+        
+        let drinkDataViewController = DrinkDataViewController()
+        
+        println("タップしたドリンクのtag:\(TouchNumber)")
+        
+        if(TouchNumber != 0){
+            drinkDataViewController.titleDrinkName = drinkName[TouchNumber-1]
+            self.navigationController?.pushViewController(drinkDataViewController, animated: false)
         }
         
     }
+    
 }
+

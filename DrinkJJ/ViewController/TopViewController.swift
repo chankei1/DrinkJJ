@@ -14,12 +14,18 @@ class TopViewController: UIViewController {
     let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
     let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
     
+    //ドリンクを作成するボタンの作成
+    let nextButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // BarButtonItemを作成する.
-        //let myBarButton_1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "onClickMyBarButton:")
+        let myImage: UIImage = UIImage(named: "backimage0.png")!
+        let myImageView: UIImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+        
         // NavigationBarを取得する.
         self.navigationController?.navigationBar
         // NavigationBarの表示する.
@@ -28,10 +34,6 @@ class TopViewController: UIViewController {
         self.navigationItem
         // タイトルを設定する.
         self.navigationItem.title = "DinkJJ"
-        // Barの左側に配置する.
-        //self.navigationItem.setLeftBarButtonItem(myBarButton_1, animated: true)
-        
-        println("bbb")
         
         start()
         
@@ -40,36 +42,40 @@ class TopViewController: UIViewController {
     
     func start(){
         // ボタンを生成する.
-        let nextButton: UIButton = UIButton(frame: CGRectMake(0, 0, screenRotationWidth/2, screenRotationHeight/10))
+        nextButton.frame = CGRectMake(0, 0, screenRotationWidth/2, screenRotationHeight/10)
         nextButton.backgroundColor = UIColor.redColor();
         nextButton.layer.masksToBounds = true
         nextButton.setTitle("ドリンクを作る", forState: .Normal)
-        nextButton.layer.cornerRadius = 20.0
-        nextButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height/1.5)
-        nextButton.addTarget(self, action: "onClickMyButton", forControlEvents: .TouchUpInside)
         
+        nextButton.layer.cornerRadius = 20.0
+        nextButton.alpha = 0.8
+        nextButton.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height/1.5)
+        nextButton.addTarget(self, action: "moveClickNextButton", forControlEvents: .TouchDown)
+        nextButton.addTarget(self, action: "onClickNextButton", forControlEvents: .TouchUpInside)
+        nextButton.addTarget(self, action: "outClickNextButton", forControlEvents: .TouchUpOutside)
         // ボタンを追加する.
         self.view.addSubview(nextButton);
         
     }
     
-    
-    func onClickMyButton(){
-        
-        // 遷移するViewを定義する.
-        let genreSelectViewController: UIViewController = GenreSelectViewController()
-        
-        // Viewを移動する.
-        //self.presentViewController(genreSelectViewController, animated: false, completion: nil)
-        self.navigationController?.pushViewController(genreSelectViewController, animated: true)
-        
+    //ボタンを押している状態の処理
+    func moveClickNextButton(){
+        //self.nextButton.backgroundColor = UIColor.blackColor()
+        self.nextButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.8)
     }
     
-    /*
-    BarButtonイベント
-    */
-    internal func onClickMyBarButton(sender: UIButton){
-        println("onClickMyBarButton:")
+    //ボタンの領域内で指を離したときの処理
+    func onClickNextButton(){
+        
+        /*
+        // 遷移するViewを定義する.
+        // Viewを移動する.
+        */
+        let genreSelectViewController: UIViewController = GenreSelectViewController()
+        self.navigationController?.pushViewController(genreSelectViewController, animated: false)
+        
+        //ボタンの色を元に戻す
+        nextButton.backgroundColor = UIColor.redColor();
     }
     
     override func didReceiveMemoryWarning() {
