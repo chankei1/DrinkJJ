@@ -7,7 +7,11 @@
 //
 
 import UIKit
-class DrinkClassificationViewController: ViewController{
+class DrinkClassificationViewController: UIViewController {
+    
+    //画面サイズ
+    let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
+    let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +28,5 @@ class DrinkClassificationViewController: ViewController{
         self.title = "分類"
         
     }
-    
+
 }
