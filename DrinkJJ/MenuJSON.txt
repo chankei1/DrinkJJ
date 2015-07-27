@@ -89,7 +89,11 @@
 },
 {
 "category_id": 2,
-"name": "オリジナルローズティー"
+"name": "HOTコーヒー"
+},
+{
+"category_id":2,
+"name":"オリジナルローズティー"
 },
 {
 "category_id": 2,
@@ -97,7 +101,7 @@
 },
 {
 "category_id": 2,
-"name": "HOTコーヒー"
+"name": "お冷"
 },
 {
 "category_id":3,

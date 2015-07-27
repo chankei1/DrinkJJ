@@ -12,7 +12,7 @@ class MenuTouchScrView: UIScrollView {
     var Delegate: ScrollViewDelegate!
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_began")
+        //println("touch_began")
         for touch: AnyObject in touches {
             var t: UITouch = touch as! UITouch
             self.Delegate.touchJudgment(Int(t.view.tag), touchFlg: true)
@@ -21,7 +21,7 @@ class MenuTouchScrView: UIScrollView {
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_moved")
+        //println("touch_moved")
         for touch: AnyObject in touches {
             var t: UITouch = touch as! UITouch
             self.Delegate.touchJudgment(Int(t.view.tag), touchFlg: false)
@@ -29,7 +29,7 @@ class MenuTouchScrView: UIScrollView {
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touch_ended")
+        //println("touch_ended")
         for touch: AnyObject in touches {
             var t: UITouch = touch as! UITouch
             self.Delegate.modalChanged(Int(t.view.tag))

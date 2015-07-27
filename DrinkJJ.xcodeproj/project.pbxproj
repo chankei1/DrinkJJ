@@ -10,6 +10,7 @@
 		182AA2C91B5E440800D80931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C07971B4AA79100CA7009 /* Main.storyboard */; };
 		182AA2CC1B5E472600D80931 /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 182AA2CB1B5E472600D80931 /* beer.png */; };
 		182AA2CE1B5E47CC00D80931 /* backimage0.png in Resources */ = {isa = PBXBuildFile; fileRef = 182AA2CD1B5E47CC00D80931 /* backimage0.png */; };
+		182AA2D01B66498B00D80931 /* DrinkDataJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 182AA2CF1B66498B00D80931 /* DrinkDataJSON.txt */; };
 		183508A61B53B92F00455F5C /* MenuTouchScrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183508A51B53B92F00455F5C /* MenuTouchScrView.swift */; };
 		185C07941B4AA79100CA7009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C07931B4AA79100CA7009 /* AppDelegate.swift */; };
 		185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C079A1B4AA79100CA7009 /* Images.xcassets */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		182AA2CB1B5E472600D80931 /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		182AA2CD1B5E47CC00D80931 /* backimage0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backimage0.png; sourceTree = "<group>"; };
+		182AA2CF1B66498B00D80931 /* DrinkDataJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DrinkDataJSON.txt; sourceTree = "<group>"; };
 		183508A51B53B92F00455F5C /* MenuTouchScrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTouchScrView.swift; path = ScrollView/MenuTouchScrView.swift; sourceTree = "<group>"; };
 		185C078E1B4AA79100CA7009 /* DrinkJJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkJJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C07921B4AA79100CA7009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				18EA32B91B4AC8B100CE8D73 /* MenuJSON.txt */,
+				182AA2CF1B66498B00D80931 /* DrinkDataJSON.txt */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				18EA32BA1B4AC8B100CE8D73 /* MenuJSON.txt in Resources */,
 				185C079E1B4AA79100CA7009 /* LaunchScreen.xib in Resources */,
 				185C079B1B4AA79100CA7009 /* Images.xcassets in Resources */,
+				182AA2D01B66498B00D80931 /* DrinkDataJSON.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

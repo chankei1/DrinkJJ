@@ -13,6 +13,9 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     var titleGenreName: String = ""
     var drinkName: [String] = []
     
+    //ドリンクの数を格納しておく
+    var drinkNum: Int = 0
+    
     let drinkDataViewController = DrinkDataViewController()
     
     //スクリーンの幅
@@ -28,8 +31,6 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var keisuke2: Int = 0
         
         //背景の追加
         let myImage: UIImage = UIImage(named: "backimage0.png")!
@@ -74,8 +75,9 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         
         //メニューを入れておく場所
         var genre = []
-        var drinkNum = 0
+        drinkNum = 0
         var name:String = ""
+        
         
         for data in jsonArray{
             if(genreTagNum == data["category_id"] as! Int){
@@ -127,6 +129,11 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
     
     //タップしたラベルを判別し、画面遷移する
     func modalChanged(TouchNumber: Int) {
+        
+        //全ドリンクの透明度を初期化する
+        for(var i=0; i<drinkNum; i++){
+            calLabel[i].alpha = 0.8
+        }
         
         let drinkDataViewController = DrinkDataViewController()
         

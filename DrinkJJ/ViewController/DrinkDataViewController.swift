@@ -51,7 +51,10 @@ class DrinkDataViewController: UIViewController {
         self.beerImageView.layer.borderColor = UIColor.whiteColor().CGColor
         self.beerImageView.layer.borderWidth = 3
         
-        self.view.addSubview(beerImageView)
+        
+        if("中ビール" == titleDrinkName){
+            self.view.addSubview(beerImageView)
+        }
         
         //各ドリンクボタンの作成
         classificationDrink()
@@ -140,8 +143,9 @@ class DrinkDataViewController: UIViewController {
         
         // 遷移するViewを定義し
         // Viewを移動する
-        let drinkClassificationViewController: UIViewController = DrinkClassificationViewController()
-        self.navigationController?.pushViewController(drinkClassificationViewController, animated: false)
+        let drinkClassificationViewController = DrinkClassificationViewController()
+        drinkClassificationViewController.drinkName = titleDrinkName
+        self.navigationController?.pushViewController(drinkClassificationViewController, animated: true)
         
         //ボタンの色を元に戻す
         classificationBtn.backgroundColor = UIColor.redColor();
@@ -153,7 +157,7 @@ class DrinkDataViewController: UIViewController {
         
         // 遷移するViewを定義し
         // Viewを移動する
-        let drinkDescriptionViewController: UIViewController = DrinkDescriptionViewController()
+        let drinkDescriptionViewController = DrinkDescriptionViewController()
         self.navigationController?.pushViewController(drinkDescriptionViewController, animated: false)
         
         //ボタンの色を元に戻す
@@ -166,8 +170,9 @@ class DrinkDataViewController: UIViewController {
         
         // 遷移するViewを定義し
         // Viewを移動する
-        let howToMakeDrinkViewController: UIViewController = HowToMakeDrinkViewController()
-        self.navigationController?.pushViewController(howToMakeDrinkViewController, animated: false)
+        let howToMakeDrinkViewController = HowToMakeDrinkViewController()
+        howToMakeDrinkViewController.drinkName = titleDrinkName
+        self.navigationController?.pushViewController(howToMakeDrinkViewController, animated: true)
         
         //ボタンの色を元に戻す
         howToMakeDrinkBtn.backgroundColor = UIColor.redColor();
@@ -179,7 +184,7 @@ class DrinkDataViewController: UIViewController {
         
         // 遷移するViewを定義し
         // Viewを移動する
-        let drinkOnePointViewController: UIViewController = DrinkOnePointViewController()
+        let drinkOnePointViewController = DrinkOnePointViewController()
         self.navigationController?.pushViewController(drinkOnePointViewController, animated: false)
         
         //ボタンの色を元に戻す
