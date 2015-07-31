@@ -50,7 +50,7 @@ class HowToMakeDrinkViewController: UIViewController, UITextViewDelegate{
         drinkTextView.layer.position = CGPoint(x: screenRotationWidth/2, y: screenRotationHeight/2 + navBarHeight!)
         drinkTextView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         drinkTextView.text = ""
-        drinkTextView.font = UIFont.systemFontOfSize(CGFloat(20))
+        drinkTextView.font = UIFont(name: "HiraKakuProN-W3", size: 20)
         drinkTextView.textColor = UIColor.blackColor()
         drinkTextView.textAlignment = NSTextAlignment.Left
         drinkTextView.dataDetectorTypes = UIDataDetectorTypes.All //日付や数字の色を変更する
@@ -77,7 +77,31 @@ class HowToMakeDrinkViewController: UIViewController, UITextViewDelegate{
     func summarizedRoughForDrink(){
         
         //classificationの処理と同じ、あとでコピペしておく
+        var summarizedRough:String = drinkName
         
+        switch summarizedRough {
+            
+            //瓶ビール
+        case "(瓶ビール)キリン", "(瓶ビール)アサヒスーパードライ", "(瓶ビール)サッポロ黒ラベル", "ノンアルコールビール":
+            drinkName = "瓶ビール"
+            
+        case "黒ウーロン茶", "ウーロン茶", "玉露入りお茶", "グレープフルーツジュース", "オレンジジュース":
+            drinkName = "ソフトドリンク"
+            
+        case "ライチミックスジュース", "ゴールドキウイミックスジュース", "アップルジュース", "クランベリージュース":
+            drinkName = "ソフトドリンク(缶)"
+            
+        case "コーラ", "サイダー", "ジンジャーエール":
+            drinkName = "ソフトドリンク(炭酸)"
+            
+            
+            
+            
+            
+        default:
+            println("当てはまりませんでした")
+            
+        }
     }
     
 }

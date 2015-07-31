@@ -171,9 +171,9 @@
 				18EA32D11B4ACAFA00CE8D73 /* DrinkSelectViewController.swift */,
 				18EA32CC1B4ACAE500CE8D73 /* DrinkDataViewController.swift */,
 				18EA32CE1B4ACAFA00CE8D73 /* DrinkClassificationViewController.swift */,
+				18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift */,
 				18EA32CF1B4ACAFA00CE8D73 /* DrinkDescriptionViewController.swift */,
 				18EA32D01B4ACAFA00CE8D73 /* DrinkOnePointViewController.swift */,
-				18EA32D31B4ACAFA00CE8D73 /* HowToMakeDrinkViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";

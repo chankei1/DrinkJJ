@@ -141,7 +141,7 @@
 },
 {
 "category_id":4,
-"name": "にごり甘露酒"
+"name": "にごり杏露酒"
 },
 {
 "category_id":4,

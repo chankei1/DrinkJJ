@@ -33,7 +33,7 @@ class DrinkClassificationViewController: UIViewController, UITextViewDelegate {
         
     }
     
-    //jsonから取得したドリンクｎ分類データをtextViewで表示する
+    //jsonから取得したドリンク分類データをtextViewで表示する
     func drinkClassView(){
         
         //jsonファイルの読み込み
@@ -52,10 +52,10 @@ class DrinkClassificationViewController: UIViewController, UITextViewDelegate {
         drinkTextView.layer.position = CGPoint(x: screenRotationWidth/2, y: screenRotationHeight/2 + navBarHeight!)
         drinkTextView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         drinkTextView.text = ""
-        drinkTextView.font = UIFont.systemFontOfSize(CGFloat(20))
+        drinkTextView.font = UIFont(name: "HiraKakuProN-W3", size: 20)
         drinkTextView.textColor = UIColor.blackColor()
         drinkTextView.textAlignment = NSTextAlignment.Center
-        drinkTextView.dataDetectorTypes = UIDataDetectorTypes.All //日付や数字の色を変更する
+        drinkTextView.dataDetectorTypes = UIDataDetectorTypes.All //日付や数字の色を変更するta
         drinkTextView.editable = false;
         drinkTextView.delegate = self;
         
