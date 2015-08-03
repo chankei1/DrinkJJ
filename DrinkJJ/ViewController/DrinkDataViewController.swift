@@ -46,7 +46,7 @@ class DrinkDataViewController: UIViewController {
         // 枠線を追加し太さを設定
         // UIImageViewをViewに追加
         */
-        beerImageView = UIImageView(frame: CGRectMake(0,0,200,200))
+        beerImageView = UIImageView(frame: CGRectMake(0,0,150,200))
         let beerImage = UIImage(named: "beer.png")
         beerImageView.image = beerImage
         beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
@@ -71,20 +71,21 @@ class DrinkDataViewController: UIViewController {
     
     //画像をタップした時の処理
     func tapGesture(sender:UITapGestureRecognizer){
+        
         //ナビゲーションバーの高さを取得
         let navBarHeight = self.navigationController?.navigationBar.frame.size.height
         
         if(image_flag){
             println("拡大")
             beerImageView.removeFromSuperview()
-            beerImageView.frame = CGRectMake(0, 0, screenRotationWidth, screenRotationHeight - navBarHeight!)
+            beerImageView.frame = CGRectMake(0, 0, 150*(screenRotationWidth/150), 200*(screenRotationWidth/150))
             beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2 + navBarHeight!)
             image_flag = false
             self.view.addSubview(beerImageView)
             
         } else {
             println("縮小")
-            beerImageView.frame = CGRectMake(0, 0, 200, 200)
+            beerImageView.frame = CGRectMake(0, 0, 150, 200)
             beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
             image_flag = true
         }
