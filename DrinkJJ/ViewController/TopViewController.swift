@@ -42,7 +42,7 @@ class TopViewController: UIViewController {
     
     func start(){
         // ボタンを生成する.
-        nextButton.frame = CGRectMake(0, 0, screenRotationWidth/2, screenRotationHeight/10)
+        nextButton.frame = CGRectMake(0, 0, screenRotationWidth/1.5, screenRotationHeight/6)
         nextButton.backgroundColor = UIColor.redColor();
         nextButton.layer.masksToBounds = true
         nextButton.setTitle("ドリンクを作る", forState: .Normal)
@@ -83,4 +83,10 @@ class TopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //サポートするデバイスの向きを指定する
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+
 }

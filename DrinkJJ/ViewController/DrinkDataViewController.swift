@@ -22,6 +22,8 @@ class DrinkDataViewController: UIViewController {
     let howToMakeDrinkBtn: UIButton = UIButton()
     let onePointBtn: UIButton = UIButton()
     
+    var image_flag:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,16 +46,19 @@ class DrinkDataViewController: UIViewController {
         // 枠線を追加し太さを設定
         // UIImageViewをViewに追加
         */
-        beerImageView = UIImageView(frame: CGRectMake(0,0,100,120))
+        beerImageView = UIImageView(frame: CGRectMake(0,0,200,200))
         let beerImage = UIImage(named: "beer.png")
         beerImageView.image = beerImage
         beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
         self.beerImageView.layer.borderColor = UIColor.whiteColor().CGColor
         self.beerImageView.layer.borderWidth = 3
+        self.beerImageView.userInteractionEnabled = true
+        var imageViewTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
         
         
         if("中ビール" == titleDrinkName){
             self.view.addSubview(beerImageView)
+            self.beerImageView.addGestureRecognizer(imageViewTap)
         }
         
         //各ドリンクボタンの作成
@@ -62,6 +67,22 @@ class DrinkDataViewController: UIViewController {
         howToMakeDrink()
         drinkOnePointDrink()
         
+    }
+    
+    //画像をタップした時の処理
+    func tapGesture(sender:UITapGestureRecognizer){
+        
+        if(image_flag){
+            println("拡大")
+            //beerImageView = UIImageView(frame: CGRectMake(0,0,200,220))
+            //beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
+            image_flag = false
+            
+        } else {
+            println("縮小")
+            beerImageView = UIImageView(frame: CGRectMake(0,0,100,120))
+            image_flag = true
+        }
     }
     
     
@@ -74,7 +95,7 @@ class DrinkDataViewController: UIViewController {
         classificationBtn.setTitle("分類", forState: .Normal)
         classificationBtn.layer.cornerRadius = 20.0
         classificationBtn.alpha = 0.8
-        classificationBtn.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.6)
+        classificationBtn.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.4)
         classificationBtn.addTarget(self, action: "drinkClassificationTouchMoved", forControlEvents: .TouchDown)
         classificationBtn.addTarget(self, action: "drinkClassificationBtn", forControlEvents: .TouchUpInside)
         
@@ -92,7 +113,7 @@ class DrinkDataViewController: UIViewController {
         descriptionBtn.setTitle("説明", forState: .Normal)
         descriptionBtn.layer.cornerRadius = 20.0
         descriptionBtn.alpha = 0.8
-        descriptionBtn.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.6)
+        descriptionBtn.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.4)
         descriptionBtn.addTarget(self, action: "drinkDescriptionTouchMoved", forControlEvents: .TouchDown)
         descriptionBtn.addTarget(self, action: "drinkDescriptionBtn", forControlEvents: .TouchUpInside)
         
@@ -110,7 +131,7 @@ class DrinkDataViewController: UIViewController {
         howToMakeDrinkBtn.setTitle("作り方", forState: .Normal)
         howToMakeDrinkBtn.layer.cornerRadius = 20.0
         howToMakeDrinkBtn.alpha = 0.8
-        howToMakeDrinkBtn.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.3)
+        howToMakeDrinkBtn.layer.position = CGPoint(x: self.view.bounds.width/3 , y:self.view.bounds.height/1.2)
         howToMakeDrinkBtn.addTarget(self, action: "howToMakeTouchMoved", forControlEvents: .TouchDown)
         howToMakeDrinkBtn.addTarget(self, action: "howToMakeBtn", forControlEvents: .TouchUpInside)
         
@@ -128,7 +149,7 @@ class DrinkDataViewController: UIViewController {
         onePointBtn.setTitle("要点", forState: .Normal)
         onePointBtn.layer.cornerRadius = 20.0
         onePointBtn.alpha = 0.8
-        onePointBtn.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.3)
+        onePointBtn.layer.position = CGPoint(x: self.view.bounds.width/3*2 , y:self.view.bounds.height/1.2)
         onePointBtn.addTarget(self, action: "drinkOnePointTouchMoved", forControlEvents: .TouchDown)
         onePointBtn.addTarget(self, action: "drinkOnePointBtn", forControlEvents: .TouchUpInside)
         
