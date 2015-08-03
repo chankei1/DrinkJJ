@@ -161,7 +161,7 @@
 },
 {
 "category_id":5,
-"name": "(赤)ソンジュ・ド バッカス"
+"name": "(赤)ソンジュドバッカス"
 },
 {
 "category_id":5,
@@ -169,15 +169,15 @@
 },
 {
 "category_id":5,
-"name": "(白)シャブリラ"
+"name": "(白)シャブリシャンフルール"
 },
 {
 "category_id":5,
-"name": "(白)ミラベル・ヴィオニエ"
+"name": "(白)ヴィオニエ"
 },
 {
 "category_id":5,
-"name": "(白)シャルドネ"
+"name": "(白)ロバート・モンダヴィ"
 },
 {
 "category_id":5,
@@ -213,7 +213,7 @@
 },
 {
 "category_id":7,
-"name": "天狗舞 山廃生搾り"
+"name": "天狗舞　山廃生搾り"
 },
 {
 "category_id":7,
@@ -249,19 +249,19 @@
 },
 {
 "category_id":8,
-"name": "(ボトル)　　叙々苑マッコリ"
+"name": "マッコリ"
 },
 {
 "category_id":8,
-"name": "マッコリ　ストレート"
+"name": "マッコリストレート"
 },
 {
 "category_id":8,
-"name": "マッコリ　フルーツ"
+"name": "マッコリフルーツ"
 },
 {
 "category_id":8,
-"name": "マッコリ　リキュール"
+"name": "マッコリリキュール"
 },
 {
 "category_id":8,
@@ -269,7 +269,7 @@
 },
 {
 "category_id":8,
-"name": "(泡盛)　　よっかこうじ"
+"name": "(泡盛)よっかこうじ"
 },
 {
 "category_id":8,

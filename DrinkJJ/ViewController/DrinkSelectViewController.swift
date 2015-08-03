@@ -112,7 +112,7 @@ class DrinkSelectViewController: UIViewController, ScrollViewDelegate{
         println("ドリンクの数:\(drinkNum)")
         
         //スクリーン何枚分かを指定する
-        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(drinkNum/2*120));
+        drinkSelectScrView.contentSize = CGSizeMake(320, (CGFloat)(drinkNum/2*130));
         
     }
     

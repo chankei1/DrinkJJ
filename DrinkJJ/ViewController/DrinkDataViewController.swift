@@ -158,7 +158,8 @@ class DrinkDataViewController: UIViewController {
         // 遷移するViewを定義し
         // Viewを移動する
         let drinkDescriptionViewController = DrinkDescriptionViewController()
-        self.navigationController?.pushViewController(drinkDescriptionViewController, animated: false)
+        drinkDescriptionViewController.drinkName = titleDrinkName
+        self.navigationController?.pushViewController(drinkDescriptionViewController, animated: true)
         
         //ボタンの色を元に戻す
         descriptionBtn.backgroundColor = UIColor.redColor();
@@ -185,7 +186,8 @@ class DrinkDataViewController: UIViewController {
         // 遷移するViewを定義し
         // Viewを移動する
         let drinkOnePointViewController = DrinkOnePointViewController()
-        self.navigationController?.pushViewController(drinkOnePointViewController, animated: false)
+        drinkOnePointViewController.drinkName = titleDrinkName
+        self.navigationController?.pushViewController(drinkOnePointViewController, animated: true)
         
         //ボタンの色を元に戻す
         onePointBtn.backgroundColor = UIColor.redColor();
