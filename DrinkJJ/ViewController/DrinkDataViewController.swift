@@ -15,7 +15,7 @@ class DrinkDataViewController: UIViewController {
     let screenRotationWidth = UIScreen.mainScreen().bounds.size.width
     let screenRotationHeight = UIScreen.mainScreen().bounds.size.height
     
-    private var beerImageView: UIImageView!
+    var beerImageView: UIImageView!
     
     let classificationBtn: UIButton = UIButton()
     let descriptionBtn: UIButton = UIButton()
@@ -55,10 +55,10 @@ class DrinkDataViewController: UIViewController {
         self.beerImageView.userInteractionEnabled = true
         var imageViewTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
         
-        
         if("中ビール" == titleDrinkName){
             self.view.addSubview(beerImageView)
             self.beerImageView.addGestureRecognizer(imageViewTap)
+
         }
         
         //各ドリンクボタンの作成
@@ -71,16 +71,21 @@ class DrinkDataViewController: UIViewController {
     
     //画像をタップした時の処理
     func tapGesture(sender:UITapGestureRecognizer){
+        //ナビゲーションバーの高さを取得
+        let navBarHeight = self.navigationController?.navigationBar.frame.size.height
         
         if(image_flag){
             println("拡大")
-            //beerImageView = UIImageView(frame: CGRectMake(0,0,200,220))
-            //beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
+            beerImageView.removeFromSuperview()
+            beerImageView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - navBarHeight!)
+            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
             image_flag = false
+            self.view.addSubview(beerImageView)
             
         } else {
             println("縮小")
-            beerImageView = UIImageView(frame: CGRectMake(0,0,100,120))
+            beerImageView.frame = CGRectMake(0, 0, 200, 200)
+            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
             image_flag = true
         }
     }
