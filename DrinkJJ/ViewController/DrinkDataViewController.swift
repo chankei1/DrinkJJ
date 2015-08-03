@@ -77,8 +77,8 @@ class DrinkDataViewController: UIViewController {
         if(image_flag){
             println("拡大")
             beerImageView.removeFromSuperview()
-            beerImageView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - navBarHeight!)
-            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+            beerImageView.frame = CGRectMake(0, 0, screenRotationWidth, screenRotationHeight - navBarHeight!)
+            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2 + navBarHeight!)
             image_flag = false
             self.view.addSubview(beerImageView)
             
