@@ -51,7 +51,7 @@ class DrinkDataViewController: UIViewController {
         beerImageView.image = beerImage
         beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200.0)
         self.beerImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        self.beerImageView.layer.borderWidth = 3
+        self.beerImageView.layer.borderWidth = 5
         self.beerImageView.userInteractionEnabled = true
         var imageViewTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
         
@@ -79,7 +79,7 @@ class DrinkDataViewController: UIViewController {
             println("拡大")
             beerImageView.removeFromSuperview()
             beerImageView.frame = CGRectMake(0, 0, 150*(screenRotationWidth/150), 200*(screenRotationWidth/150))
-            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2 + navBarHeight!)
+            beerImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2 + navBarHeight!-6)
             image_flag = false
             self.view.addSubview(beerImageView)
             
